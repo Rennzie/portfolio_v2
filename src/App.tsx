@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { LandingZone, Profile } from './components';
+import { LandingZone, Profile, SkillsBar } from './components';
 
 const useStyles = createUseStyles({
   appWrapperGrid: {
@@ -16,7 +16,8 @@ const useStyles = createUseStyles({
     gridColumnStart: '2',
     gridRowStart: '2',
     display: 'grid',
-    gridTemplateColumns: '3fr 1fr'
+    gridTemplateColumns: '3fr 1fr',
+    gridTemplateRows: 'repeat(4, 1fr)'
   }
 });
 
@@ -27,6 +28,7 @@ function App() {
       <LandingZone />
       <section className={classes.bodyWrapperGrid}>
         <Profile />
+        <SkillsBar />
       </section>
     </main>
   );
