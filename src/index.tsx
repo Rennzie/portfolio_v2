@@ -7,10 +7,20 @@ import * as serviceWorker from './serviceWorker';
 
 export type Theme = {
   colorPrimary: string;
+  typography: {
+    body: { fontFamily: string; fontSize: number; lineHeight: string };
+  };
 };
 
 const theme = {
-  colorPrimary: '#e3a857'
+  colorPrimary: '#e3a857',
+  typography: {
+    body: {
+      fontFamily: 'Roboto',
+      fontSize: 18,
+      lineHeight: '1.5rem'
+    }
+  }
 };
 
 ReactDOM.render(

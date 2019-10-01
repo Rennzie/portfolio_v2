@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { LandingZone } from './components';
+import { LandingZone, Profile } from './components';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <LandingZone />
+      <Profile />
     </div>
   );
 };

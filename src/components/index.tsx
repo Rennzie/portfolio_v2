@@ -1,3 +1,4 @@
 import LandingZone from './LandingZone';
+import Profile from './Profile';
 
-export { LandingZone };
+export { LandingZone, Profile };

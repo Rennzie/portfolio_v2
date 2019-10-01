@@ -23,7 +23,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export default function LandingZone() {
   const theme = useTheme();
-  console.log(theme);
   const classes: any = useStyles({ theme });
 
   return (
