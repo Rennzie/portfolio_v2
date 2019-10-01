@@ -6,19 +6,36 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 export type Theme = {
+  spacing: {
+    pageWidth: {
+      max: number;
+    };
+  };
   colorPrimary: string;
   typography: {
-    body: { fontFamily: string; fontSize: number; lineHeight: string };
+    body: { fontFamily: string; fontSize: number; lineHeight: string; paddingBottom: number };
+    headerSecondary: { fontFamily: string; fontSize: number; fontWeight: string };
   };
 };
 
-const theme = {
+const theme: Theme = {
+  spacing: {
+    pageWidth: {
+      max: 1200
+    }
+  },
   colorPrimary: '#e3a857',
   typography: {
     body: {
       fontFamily: 'Roboto',
       fontSize: 18,
-      lineHeight: '1.5rem'
+      lineHeight: '1.5rem',
+      paddingBottom: 16
+    },
+    headerSecondary: {
+      fontFamily: 'Roboto',
+      fontSize: 24,
+      fontWeight: 'medium'
     }
   }
 };
