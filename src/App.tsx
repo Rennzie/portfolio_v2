@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { LandingZone, Profile, SkillsBar } from './components';
+import { LandingZone, Profile, SkillsBar, ProjectStockman } from './components';
 
 const useStyles = createUseStyles({
   appWrapperGrid: {
@@ -29,6 +29,7 @@ function App() {
       <section className={classes.bodyWrapperGrid}>
         <Profile />
         <SkillsBar />
+        <ProjectStockman />
       </section>
     </main>
   );
