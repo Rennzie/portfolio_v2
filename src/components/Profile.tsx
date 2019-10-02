@@ -17,24 +17,47 @@ const useStyles = createUseStyles((theme: Theme) => ({
     // minHeight: '100%'
   },
   bioWrapper: {
-    gridColumnStart: 'span 2'
+    gridColumnStart: 'span 2',
+    padding: 16
+  },
+  picWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
+    // height: '100%'
   },
   profilePic: {
     overflow: 'hidden',
     borderRadius: '100%',
-    width: 250,
-    margin: '0 auto'
+    width: '100%',
+    margin: '0 auto',
+    padding: '16px',
+    boxSizing: 'border-box'
   },
   header: {
     ...theme.typography.headerSecondary
   },
+  contact: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  },
   findMeOn: {
     display: 'flex',
-    justifyContent: 'space-around',
-    width: '100%'
+    justifyContent: 'space-between',
+    width: '35%'
   },
   findMeOnIcon: {
-    color: 'grey'
+    color: 'grey',
+    '&:hover': {
+      color: theme.colorPrimary
+    }
+  },
+  constactEmail: {
+    textDecoration: 'none',
+    color: 'black',
+    ...theme.typography.body
   },
   paragraph: {
     ...theme.typography.body
@@ -47,8 +70,11 @@ export default function Profile() {
 
   return (
     <main className={classes.gridWrapper}>
-      <img className={classes.profilePic} src={profilePicture} alt="head shot of me" />
-      <section>
+      <div className={classes.picWrapper}>
+        <img className={classes.profilePic} src={profilePicture} alt="head shot of me" />
+      </div>
+
+      <section className={classes.contact}>
         <h2 className={classes.header}>Hi I'm Sean and I love to build things</h2>
 
         <div className={classes.findMeOn}>
@@ -59,14 +85,6 @@ export default function Profile() {
             target="_blank"
           >
             <i className="fab fa-3x fa-github-square" />
-          </a>
-          <a
-            className={classes.findMeOnIcon}
-            href="https://www.codewars.com/users/Rennzie"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img src="./assets/logos/codewars.svg" alt="" />
           </a>
           <a
             className={classes.findMeOnIcon}
@@ -86,18 +104,14 @@ export default function Profile() {
           </a>
           <a
             className={classes.findMeOnIcon}
-            href="https://stackoverflow.com/users/10132568/rennzie"
+            href="https://medium.com/@rnnsea001"
             rel="noopener noreferrer"
             target="_blank"
           >
             <i className="fab fa-3x fa-medium" />
           </a>
         </div>
-        <a
-          className={classes.paragraph}
-          style={{ textDecoration: 'none', color: 'black' }}
-          href="mailto:sean.rennie6@gmail.com"
-        >
+        <a className={classes.constactEmail} href="mailto:sean.rennie6@gmail.com">
           sean.rennie6@gmail.com
         </a>
       </section>
