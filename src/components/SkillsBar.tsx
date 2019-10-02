@@ -54,7 +54,7 @@ const skills: Skill[][] = [
     { icon: 'devicon-typescript-plain', name: 'Typescript' },
     { icon: '', name: 'Apollo GraphQL' },
     { icon: '', name: 'Material-UI' },
-    { icon: 'devicon-gitlab-plain', name: 'CI / CD(Gitlab)' },
+    { icon: 'devicon-gitlab-plain', name: 'CI/CD (Gitlab)' },
     { icon: 'fas fa-map-marked-alt', name: 'Google Maps JS API' },
     { icon: '', name: 'Knex.js' },
     { icon: 'devicon-webpack-plain', name: 'Webpack' },
@@ -98,7 +98,7 @@ export default function SkillsBar() {
           {skills.map(skillSet => (
             <div>
               {skillSet.map(skill => (
-                <p className={classes.skill}>
+                <p className={classes.skill} style={{ paddingLeft: skill.icon ? 0 : 27 }}>
                   <i className={skill.icon} /> {skill.name}
                 </p>
               ))}
