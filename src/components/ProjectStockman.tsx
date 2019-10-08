@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
-import stockmanScreenShots from '../assets/stockman-screen-shots.png';
+import stockmanScreenShots from '../assets/stockman-screen-shots-icon-style.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   projectHeader: {

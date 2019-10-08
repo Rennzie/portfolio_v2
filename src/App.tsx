@@ -1,7 +1,13 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { LandingZone, Profile, SkillsBar, ProjectStockman } from './components';
+import {
+  LandingZone,
+  Profile,
+  SkillsBar,
+  ProjectStockman,
+  ProjectStockmanProto
+} from './components';
 
 const useStyles = createUseStyles({
   appWrapperGrid: {
@@ -16,8 +22,9 @@ const useStyles = createUseStyles({
     gridColumnStart: '2',
     gridRowStart: '2',
     display: 'grid',
-    gridTemplateColumns: '3fr 1fr',
-    gridTemplateRows: 'repeat(4, 1fr)'
+    gridTemplateColumns: '900px 1fr',
+    gridTemplateRows: '1fr',
+    gridRowGap: '25px'
   }
 });
 
@@ -30,6 +37,7 @@ function App() {
         <Profile />
         <SkillsBar />
         <ProjectStockman />
+        <ProjectStockmanProto />
       </section>
     </main>
   );
