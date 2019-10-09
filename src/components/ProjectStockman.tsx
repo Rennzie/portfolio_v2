@@ -14,6 +14,12 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   blurb: {
     ...theme.typography.body
+  },
+  screenShots: {
+    width: '80%'
+  },
+  section: {
+    borderBottom: `2px solid ${theme.colorPrimary}`
   }
 }));
 
@@ -21,7 +27,7 @@ export default function ProjectStockman() {
   const theme = useTheme();
   const classes: any = useStyles({ theme });
   return (
-    <section>
+    <section className={classes.section}>
       <h1 className={classes.projectHeader}>Projects</h1>
       <h2 className={classes.header}>The Stockman</h2>
       <p className={classes.blurb}>
@@ -36,7 +42,7 @@ export default function ProjectStockman() {
         This is an active project that is part of Bulrush Agritech, the start up I co-founded with
         my wife. Please email me for access to the private GitLab repo.
       </p>
-      <img src={stockmanScreenShots} alt="product screen shots" />
+      <img className={classes.screenShots} src={stockmanScreenShots} alt="product screen shots" />
       <div>
         <p className={classes.blurb}>
           CHALLENGES: My main challenges centered around choosing which technologies to use. I

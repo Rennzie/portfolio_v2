@@ -10,7 +10,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
     margin: '0 auto',
     display: 'grid',
     gridTemplateColumns: '1fr 3fr',
-    gridTemplateRows: '1fr 1fr'
+    gridTemplateRows: '1fr 1fr',
+    borderBottom: `2px solid ${theme.colorPrimary}`
     // gridColumnGap: '5%',
     // boxSizing: 'border-box',
     // padding: '2% 5%'
