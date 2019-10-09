@@ -15,6 +15,8 @@ export type Theme = {
   typography: {
     body: { fontFamily: string; fontSize: number; lineHeight: string; paddingBottom: number };
     headerSecondary: { fontFamily: string; fontSize: number; fontWeight: string };
+    headerTertiary: { fontFamily: string; fontSize: number; fontWeight: string };
+    caption: { fontFamily: string; fontSize: number; fontWeight: string };
   };
 };
 
@@ -36,6 +38,16 @@ const theme: Theme = {
       fontFamily: 'Roboto',
       fontSize: 24,
       fontWeight: 'medium'
+    },
+    headerTertiary: {
+      fontFamily: 'Roboto',
+      fontSize: 18,
+      fontWeight: 'regular'
+    },
+    caption: {
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: 'light'
     }
   }
 };
