@@ -6,7 +6,8 @@ import {
   Profile,
   SkillsBar,
   ProjectStockman,
-  ProjectStockmanProto
+  ProjectStockmanProto,
+  ProjectsGeneralAssembly
 } from './components';
 
 const useStyles = createUseStyles({
@@ -38,6 +39,8 @@ function App() {
         <SkillsBar />
         <ProjectStockman />
         <ProjectStockmanProto />
+        <div>time line</div>
+        <ProjectsGeneralAssembly />
       </section>
     </main>
   );
