@@ -53,23 +53,23 @@ const theme: Theme = {
   typography: {
     body: {
       fontFamily: 'Roboto',
-      fontSize: 18,
-      lineHeight: '1.5rem',
+      fontSize: 20,
+      lineHeight: '1.8rem',
       paddingBottom: 16
     },
     headerSecondary: {
       fontFamily: 'Roboto',
-      fontSize: 24,
+      fontSize: 30,
       fontWeight: 'medium'
     },
     headerTertiary: {
       fontFamily: 'Roboto',
-      fontSize: 18,
+      fontSize: 24,
       fontWeight: 'regular'
     },
     caption: {
       fontFamily: 'Roboto',
-      fontSize: 14,
+      fontSize: 18,
       fontWeight: 'light'
     }
   }

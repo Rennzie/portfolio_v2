@@ -52,25 +52,12 @@ const navMachine = Machine({
 const useStyles = createUseStyles({
   appWrapperGrid: {
     display: 'grid',
-    gridTemplateColumns: '1fr  1200px 1fr',
-    gridTemplateRows: '2fr',
-    '@media(max-width:720px)': {
-      gridTemplateColumns: '1fr'
-    }
+    gridTemplateColumns: '1fr  3fr'
   },
-  bodyWrapperGrid: {
-    gridColumnStart: '2',
-    gridRowStart: '2',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    girdTemplateRows: 'repeat(6,1fr)',
-    gridRowGap: '25px',
-    gridTemplateRows: '1fr',
-
-    '@media(max-width:720px)': {
-      gridTemplateColumns: '1fr',
-      gridTemplateRows: ''
-    }
+  pages: {
+    height: '100vh',
+    boxSizing: 'border-box',
+    padding: 70
   }
 });
 
@@ -81,15 +68,18 @@ function App() {
 
   return (
     <>
-      <NavDrawer location={location} handleNextLocation={handleNextLocation} />
-      {/* <section className={classes.bodyWrapperGrid}>
-        <Profile />
-        <ProjectStockman />
-        <SkillsBar />
-        <ProjectStockmanProto />
-        <ProjectsGeneralAssembly />
-        <AboutThisPage />
-      </section> */}
+      <main className={classes.appWrapperGrid}>
+        <NavDrawer location={location} handleNextLocation={handleNextLocation} />
+        <section className={classes.pages}>
+          {location === 'profile' && <Profile />}
+          {/* <ProjectStockman /> */}
+          {location === 'skills' && <SkillsBar />}
+          {location === 'about' && <AboutThisPage />}
+          {/* <ProjectStockmanProto />
+          <ProjectsGeneralAssembly />
+          <AboutThisPage /> */}
+        </section>
+      </main>
     </>
   );
 }

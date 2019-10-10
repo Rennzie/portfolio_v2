@@ -10,13 +10,10 @@ import Logo from '../assets/sr-logo-bricks-tagline.svg';
 const useStyles = createUseStyles((theme: Theme) => ({
   container: {
     height: '100vh',
-    width: 300,
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    // alignItems: 'center',
     justifyContent: 'flex-start',
-    // margin: '0 auto,
-    // borderBottom: `2px solid ${theme.colorPrimary}`
     backgroundColor: theme.palette.primary.light
   },
   logo: {
@@ -25,12 +22,10 @@ const useStyles = createUseStyles((theme: Theme) => ({
   navCard: {
     width: '100%',
     padding: 16,
-    // margin: '8px 0px',
     borderBottom: `1px solid ${theme.palette.primary.dark}`,
-    ...theme.typography.headerSecondary,
-    // backgroundColor: theme.palette.primary.dark,
     boxSizing: 'border-box',
     cursor: 'pointer',
+    ...theme.typography.headerSecondary,
     '&:hover': {
       boxShadow: '0px 3px 0px #00000025'
     },
