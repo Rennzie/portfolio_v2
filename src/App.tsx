@@ -16,7 +16,7 @@ import {
 
 const navMachine = Machine({
   id: 'navMachine',
-  initial: 'profile',
+  initial: 'skills',
   states: {
     profile: {
       on: {

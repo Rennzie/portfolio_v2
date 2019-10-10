@@ -8,30 +8,36 @@ const useStyles = createUseStyles({
   },
   skillThermometer: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-around'
   },
   thermometer: {
-    height: 1000,
-    width: 25,
-    background: 'linear-gradient(0deg, rgba(250,217,97,1) 0%, rgba(247,107,28,1) 100%)',
+    height: 25,
+    width: '100%',
+    background: 'linear-gradient(90deg, rgba(250,217,97,1) 0%, rgba(247,107,28,1) 100%)',
     borderRadius: 12.5,
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row-reverse',
+    // flexDirection: 'column',
     justifyContent: 'space-around',
-    aligItems: 'center'
+    alignItems: 'center',
+    marginTop: 30,
+    marginBottom: 30
   },
   thermoText: {
     fontFamily: 'Roboto',
     fontSize: 20,
-    fontWeight: 'bold',
-    transform: 'rotate(-90deg) '
+    fontWeight: 'bold'
+    // transform: 'rotate(-90deg) '
   },
   skills: {
-    height: 1000,
+    // height: ,
+    width: '100%',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row-reverse',
+
     justifyContent: 'space-around',
-    aligItems: 'center'
+    alignItems: 'flex-start'
   },
   skill: {
     fontFamily: 'Roboto Mono',
@@ -86,7 +92,7 @@ export default function SkillsBar() {
   const theme: Theme = useTheme();
   const classes = useStyles({ theme });
   return (
-    <aside className={classes.skillsAndTech}>
+    <section className={classes.skillsAndTech}>
       <h2 style={{ ...theme.typography.headerSecondary } as CSSProperties}>Skills and Tech</h2>
       <div className={classes.skillThermometer}>
         <div className={classes.thermometer}>
@@ -106,6 +112,6 @@ export default function SkillsBar() {
           ))}
         </div>
       </div>
-    </aside>
+    </section>
   );
 }
