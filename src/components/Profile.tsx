@@ -6,63 +6,73 @@ import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   gridWrapper: {
-    // gridColumnStart: 'span 4',
-    // '@media(max-width:720px)': {
-    //   gridColumnStart: '1'
-    // },
-    maxWidth: theme.spacing.pageWidth.max,
-    margin: '0 auto',
     display: 'grid',
-    gridTemplateColumns: '1fr 3fr',
-    gridTemplateRows: '1fr 1fr'
-    // borderBottom: `2px solid ${theme.colorPrimary}`
-    // gridColumnGap: '5%',
-    // boxSizing: 'border-box',
-    // padding: '2% 5%'
-    // minHeight: '100%'
-  },
-  bioWrapper: {
-    gridColumnStart: 'span 2',
-    padding: 16
-  },
-  picWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
-    // height: '100%'
-  },
-  profilePic: {
-    overflow: 'hidden',
-    borderRadius: '100%',
-    width: '100%',
-    margin: '0 auto',
-    padding: '16px',
-    boxSizing: 'border-box'
-  },
-  header: {
-    ...theme.typography.headerSecondary
+    gridTemplateColumns: 'repeat(6 1fr)',
+    gridTemplateRows: 'repeat(4 1fr)',
+    gridRowGap: 40
   },
   contact: {
+    gridColumnStart: 'span 3',
+    gridRowStart: 'span 2',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around'
+    // justifyContent: 'center',
+    alignItems: 'center'
   },
-  findMeOn: {
+  picWrapper: {
+    gridColumnStart: 'span 2',
+    gridRowStart: 'span 2',
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start'
+  },
+
+  findMeOn: {
+    gridColumnStart: '6',
+    gridRowStart: 'span 2',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    width: '35%'
+    alignItems: 'center'
+    // width: '35%'
   },
-  findMeOnIcon: {
-    color: 'grey',
-    '&:hover': {
-      // color: theme.colorPrimary
-    }
+  bioWrapper: {
+    gridColumnStart: 'span 6',
+    gridRowStart: '2 span 2'
+    // paddingTop: 20
   },
-  constactEmail: {
+  profilePic: {
+    borderRadius: '100%',
+    width: 250,
+    height: 'auto'
+  },
+  header: {
+    alignSelf: 'flex-start',
+    ...theme.typography.headerPrimary,
+    paddingBottom: 20
+  },
+  blurb: {
+    ...theme.typography.headerTertiary,
+    lineHeight: '2rem'
+    // textAlign: 'center'
+  },
+  contactEmail: {
+    justifySelf: 'baseline',
     textDecoration: 'none',
     color: 'black',
-    ...theme.typography.body
+    paddingTop: 60,
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    '&:hover': {
+      textDecoration: 'underline'
+    }
+  },
+  findMeOnIcon: {
+    color: theme.palette.secondary.light,
+    '&:hover': {
+      color: theme.palette.secondary.main
+    }
   },
   paragraph: {
     ...theme.typography.body
@@ -75,52 +85,56 @@ export default function Profile() {
 
   return (
     <main className={classes.gridWrapper}>
-      <div className={classes.picWrapper}>
-        <img className={classes.profilePic} src={profilePicture} alt="head shot of me" />
-      </div>
-
       <section className={classes.contact}>
-        <h2 className={classes.header}>Hi I'm Sean and I love to build things</h2>
+        <h2 className={classes.header}>Hi I'm Sean. </h2>
+        <h2 className={classes.blurb}>
+          Welcome to the my web development portfolio. If you take one thing away from your visit,
+          it should be that I love to build things!
+        </h2>
 
-        <div className={classes.findMeOn}>
-          <a
-            className={classes.findMeOnIcon}
-            href="https://github.com/Rennzie"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-3x fa-github-square" />
-          </a>
-          <a
-            className={classes.findMeOnIcon}
-            href="https://www.linkedin.com/in/sean-rennie6/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-3x fa-linkedin" />
-          </a>
-          <a
-            className={classes.findMeOnIcon}
-            href="https://stackoverflow.com/users/10132568/rennzie"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-3x fa-stack-overflow" />
-          </a>
-          <a
-            className={classes.findMeOnIcon}
-            href="https://medium.com/@rnnsea001"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-3x fa-medium" />
-          </a>
-        </div>
-        <a className={classes.constactEmail} href="mailto:sean.rennie6@gmail.com">
+        <a className={classes.contactEmail} href="mailto:sean.rennie6@gmail.com">
           sean.rennie6@gmail.com
         </a>
       </section>
 
+      <div className={classes.picWrapper}>
+        <img className={classes.profilePic} src={profilePicture} alt="head shot of me" />
+      </div>
+
+      <div className={classes.findMeOn}>
+        <a
+          className={classes.findMeOnIcon}
+          href="https://github.com/Rennzie"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i className="fab fa-3x fa-github-square" />
+        </a>
+        <a
+          className={classes.findMeOnIcon}
+          href="https://www.linkedin.com/in/sean-rennie6/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i className="fab fa-3x fa-linkedin" />
+        </a>
+        <a
+          className={classes.findMeOnIcon}
+          href="https://stackoverflow.com/users/10132568/rennzie"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i className="fab fa-3x fa-stack-overflow" />
+        </a>
+        <a
+          className={classes.findMeOnIcon}
+          href="https://medium.com/@rnnsea001"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i className="fab fa-3x fa-medium" />
+        </a>
+      </div>
       <section className={classes.bioWrapper}>
         <p className={classes.paragraph}>
           Working as an exploration geologist in West Africa for 5 years taught me to break big

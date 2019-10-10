@@ -1,8 +1,12 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
+  header: {
+    ...theme.typography.headerPrimary,
+    paddingBottom: 20
+  },
   blurb: {
     ...theme.typography.body
   },
@@ -106,7 +110,7 @@ export default function SkillsBar() {
   const classes: any = useStyles({ theme });
   return (
     <section className={classes.skillsAndTech}>
-      <h2 style={{ ...theme.typography.headerPrimary } as CSSProperties}>Skills and Tech</h2>
+      <h2 className={classes.header}>Skills and Tech</h2>
       <p className={classes.blurb}>
         The techonologies and skills I am familiar with. The vertical ordering also indicates my
         confidence in ability in descending order

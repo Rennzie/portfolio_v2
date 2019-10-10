@@ -3,20 +3,11 @@ import { createUseStyles } from 'react-jss';
 import { Machine } from 'xstate';
 import { useMachine } from '@xstate/react';
 
-import {
-  NavDrawer,
-  Profile,
-  SkillsBar,
-  ProjectStockman,
-  ProjectStockmanProto,
-  ProjectsGeneralAssembly,
-  AboutThisPage,
-  Footer
-} from './components';
+import { NavDrawer, Profile, SkillsBar, Projects, AboutThisPage } from './components';
 
 const navMachine = Machine({
   id: 'navMachine',
-  initial: 'skills',
+  initial: 'projects',
   states: {
     profile: {
       on: {
@@ -57,7 +48,8 @@ const useStyles = createUseStyles({
   pages: {
     height: '100vh',
     boxSizing: 'border-box',
-    padding: 70
+    padding: 60,
+    overflow: 'scroll'
   }
 });
 
@@ -72,12 +64,9 @@ function App() {
         <NavDrawer location={location} handleNextLocation={handleNextLocation} />
         <section className={classes.pages}>
           {location === 'profile' && <Profile />}
-          {/* <ProjectStockman /> */}
+          {location === 'projects' && <Projects />}
           {location === 'skills' && <SkillsBar />}
           {location === 'about' && <AboutThisPage />}
-          {/* <ProjectStockmanProto />
-          <ProjectsGeneralAssembly />
-          <AboutThisPage /> */}
         </section>
       </main>
     </>

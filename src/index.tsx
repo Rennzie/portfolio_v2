@@ -21,11 +21,6 @@ type Type = {
 };
 
 export type Theme = {
-  spacing: {
-    pageWidth: {
-      max: number;
-    };
-  };
   palette: { primary: Color; secondary: Color };
   typography: {
     body: Type;
@@ -37,11 +32,6 @@ export type Theme = {
 };
 
 const theme: Theme = {
-  spacing: {
-    pageWidth: {
-      max: 1200
-    }
-  },
   palette: {
     primary: {
       main: '#d65f09',

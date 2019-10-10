@@ -11,7 +11,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   header: {
     paddingBottom: 16,
-    ...theme.typography.headerSecondary
+    ...theme.typography.headerPrimary
   },
   bodyText: {
     ...theme.typography.body
