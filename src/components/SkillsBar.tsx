@@ -8,7 +8,9 @@ const useStyles = createUseStyles((theme: Theme) => ({
     paddingBottom: 20
   },
   blurb: {
-    ...theme.typography.body
+    ...theme.typography.body,
+    paddingBottom: 20,
+    textAlign: 'justify'
   },
   skillThermometer: {
     display: 'flex',
@@ -100,7 +102,8 @@ const skills: Skill[][] = [
     { icon: 'devicon-mocha-plain', name: 'Mocha' },
     { icon: '', name: 'Chai' },
     { icon: '', name: 'Service-workers' },
-    { icon: 'fab fa-python', name: 'Python' }
+    { icon: 'fab fa-python', name: 'Python' },
+    { icon: 'fab fa-react', name: 'React Native' }
   ]
 ];
 
@@ -111,10 +114,7 @@ export default function SkillsBar() {
   return (
     <section className={classes.skillsAndTech}>
       <h2 className={classes.header}>Skills and Tech</h2>
-      <p className={classes.blurb}>
-        The techonologies and skills I am familiar with. The vertical ordering also indicates my
-        confidence in ability in descending order
-      </p>
+      {/* <p className={classes.blurb}>The techonologies and skills I'm familiar with.</p> */}
       <div className={classes.skillThermometer}>
         <div className={classes.thermometer}>
           <h6 className={classes.thermoText}>Confident</h6>

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
@@ -8,12 +10,15 @@ import resolut from '../assets/resolute-cropped-1200x1200.png';
 import grit from '../assets/grit-dashboard-cropped-1200x1200.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
-  section: {
-    gridColumnStart: 'span 4',
-    '@media(max-width:720px)': {
-      gridColumnStart: '1'
+  head: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '& p': {
+      cursor: 'pointer',
+      color: theme.palette.secondary.main,
+      ...theme.typography.body
     }
-    // borderBottom: `2px solid ${theme.colorPrimary}`
   },
   projectHeader: {
     ...theme.typography.headerSecondary
@@ -53,12 +58,19 @@ const useStyles = createUseStyles((theme: Theme) => ({
   }
 }));
 
-export default function ProjectsGeneralAssembly() {
+type Props = {
+  goBack: () => void;
+};
+
+export default function ProjectsGeneralAssembly({ goBack }: Props) {
   const theme = useTheme();
   const classes: any = useStyles({ theme });
   return (
-    <section className={classes.section}>
-      <h2 className={classes.header}>General Assembly, London</h2>
+    <section>
+      <div className={classes.head}>
+        <h2 className={classes.header}>General Assembly, London</h2>
+        <p onClick={goBack}>{`<< BACK`}</p>
+      </div>
       <p className={classes.blurb}>
         While at the General Assembly in 2018 we completed 4 projects over the three months of the
         web development immersive. The aim was to put into practice what we had learned in the

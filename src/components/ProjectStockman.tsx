@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
@@ -5,16 +7,19 @@ import { Theme } from '..';
 import stockmanScreenShots from '../assets/stockman-screen-shots-icon-style.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
-  section: {
-    gridColumnStart: 'span 3'
-    // borderBottom: `2px solid ${theme.colorPrimary}`
-  },
-  projectHeader: {
-    ...theme.typography.headerSecondary
+  head: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '& p': {
+      cursor: 'pointer',
+      color: theme.palette.secondary.main,
+      ...theme.typography.body
+    }
   },
   header: {
-    paddingBottom: 16,
-    ...theme.typography.headerSecondary
+    paddingBottom: 20,
+    ...theme.typography.headerPrimary
   },
   blurb: {
     ...theme.typography.body
@@ -24,13 +29,19 @@ const useStyles = createUseStyles((theme: Theme) => ({
   }
 }));
 
-export default function ProjectStockman() {
+type Props = {
+  goBack: () => void;
+};
+
+export default function ProjectStockman({ goBack }: Props) {
   const theme = useTheme();
   const classes: any = useStyles({ theme });
   return (
     <section className={classes.section}>
-      <h1 className={classes.projectHeader}>Projects</h1>
-      <h2 className={classes.header}>The Stockman</h2>
+      <div className={classes.head}>
+        <h2 className={classes.header}>The Stockman</h2>
+        <p onClick={goBack}>{`<< BACK`}</p>
+      </div>
       <p className={classes.blurb}>
         A SaaS platform for grassland livestock farmers. The goal was to build a tool that helps
         livestock farmers be more efficient and therefore more profitable. Also to save time by

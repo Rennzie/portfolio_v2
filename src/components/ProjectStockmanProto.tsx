@@ -1,18 +1,24 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import prototypeScreenShots from '../assets/livestock-manage-prototype-screens.png';
 import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
-  section: {
-    gridColumnStart: 'span 4',
-    '@media(max-width:720px)': {
-      gridColumnStart: '1'
+  head: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '& p': {
+      cursor: 'pointer',
+      color: theme.palette.secondary.main,
+      ...theme.typography.body
     }
-    // borderBottom: `2px solid ${theme.colorPrimary}`
   },
   projectHeader: {
-    ...theme.typography.headerSecondary
+    ...theme.typography.headerPrimary,
+    paddingBottom: 20
   },
   header: {
     paddingBottom: 16,
@@ -26,13 +32,20 @@ const useStyles = createUseStyles((theme: Theme) => ({
   }
 }));
 
-export default function ProjectStockmanProto() {
+type Props = {
+  goBack: () => void;
+};
+
+export default function ProjectStockmanProto({ goBack }: Props) {
   const theme = useTheme();
   const classes: any = useStyles({ theme });
 
   return (
     <section className={classes.section}>
-      <h2 className={classes.header}>Livestock management prototype</h2>
+      <div className={classes.head}>
+        <h2 className={classes.header}>Livestock management prototype</h2>
+        <p onClick={goBack}>{`<< BACK`}</p>
+      </div>
       <p className={classes.blurb}>
         This was the precursor to what is no The Stockman. I combined the skills learned at General
         Assembly conversations I was having with my Dad -he is livestock farmer in South Africa- to

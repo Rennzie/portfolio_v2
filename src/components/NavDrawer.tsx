@@ -27,7 +27,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     cursor: 'pointer',
     ...theme.typography.headerSecondary,
     '&:hover': {
-      boxShadow: '0px 3px 0px #00000025'
+      boxShadow: '0px 3px 5px #00000025 !important'
     },
     '&:first-child': {
       borderTop: `1px solid ${theme.palette.primary.dark}`

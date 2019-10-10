@@ -7,8 +7,8 @@ import { Theme } from '..';
 const useStyles = createUseStyles((theme: Theme) => ({
   gridWrapper: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(6 1fr)',
-    gridTemplateRows: 'repeat(4 1fr)',
+    gridTemplateColumns: 'repeat(5 1fr)',
+    gridTemplateRows: 'repeat(5 1fr)',
     gridRowGap: 40
   },
   contact: {
@@ -28,23 +28,23 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
 
   findMeOn: {
-    gridColumnStart: '6',
-    gridRowStart: 'span 2',
+    gridColumnStart: 'span 3',
+    gridRowStart: '3',
     width: '100%',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    // flexDirection: 'column',
+    justifyContent: 'space-around',
     alignItems: 'center'
     // width: '35%'
   },
   bioWrapper: {
-    gridColumnStart: 'span 6',
+    gridColumnStart: 'span 5',
     gridRowStart: '2 span 2'
     // paddingTop: 20
   },
   profilePic: {
     borderRadius: '100%',
-    width: 250,
+    width: 300,
     height: 'auto'
   },
   header: {
@@ -58,14 +58,19 @@ const useStyles = createUseStyles((theme: Theme) => ({
     // textAlign: 'center'
   },
   contactEmail: {
-    justifySelf: 'baseline',
+    gridColumnStart: 'span 2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     textDecoration: 'none',
-    color: 'black',
-    paddingTop: 60,
+    color: 'white',
+    borderRadius: 9,
     fontFamily: 'Roboto',
     fontSize: 18,
+    backgroundColor: theme.palette.secondary.light,
     '&:hover': {
-      textDecoration: 'underline'
+      textDecoration: 'underline',
+      backgroundColor: theme.palette.secondary.main
     }
   },
   findMeOnIcon: {
@@ -75,7 +80,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
     }
   },
   paragraph: {
-    ...theme.typography.body
+    ...theme.typography.body,
+    textAlign: 'justify'
   }
 }));
 
@@ -89,12 +95,9 @@ export default function Profile() {
         <h2 className={classes.header}>Hi I'm Sean. </h2>
         <h2 className={classes.blurb}>
           Welcome to the my web development portfolio. If you take one thing away from your visit,
-          it should be that I love to build things!
+          it should be that I love to build things! If you would like to see more, you cant reach me
+          on one of the channels below:
         </h2>
-
-        <a className={classes.contactEmail} href="mailto:sean.rennie6@gmail.com">
-          sean.rennie6@gmail.com
-        </a>
       </section>
 
       <div className={classes.picWrapper}>
@@ -135,6 +138,9 @@ export default function Profile() {
           <i className="fab fa-3x fa-medium" />
         </a>
       </div>
+      <a className={classes.contactEmail} href="mailto:sean.rennie6@gmail.com">
+        sean.rennie6@gmail.com
+      </a>
       <section className={classes.bioWrapper}>
         <p className={classes.paragraph}>
           Working as an exploration geologist in West Africa for 5 years taught me to break big
