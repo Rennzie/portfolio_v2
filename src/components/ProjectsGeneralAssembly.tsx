@@ -20,40 +20,47 @@ const useStyles = createUseStyles((theme: Theme) => ({
       ...theme.typography.body
     }
   },
-  projectHeader: {
-    ...theme.typography.headerSecondary
-  },
   header: {
-    paddingBottom: 16,
-    ...theme.typography.headerSecondary
+    paddingBottom: 20,
+    ...theme.typography.headerPrimary
+  },
+  blurb: {
+    ...theme.typography.body,
+    alignText: 'justify',
+    paddingBottom: 30
   },
   projectTitle: {
     ...theme.typography.headerTertiary
   },
-  blurb: {
-    ...theme.typography.body
-  },
   caption: {
     ...theme.typography.caption
   },
-  screenShots: {
-    width: '80%'
-  },
   projects: {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    flexWrap: 'wrap'
   },
   projectCard: {
-    width: '20%',
-    padding: 16,
-    border: '1px solid #e0e0e0',
-    boxShadow: '0px 3px 15px #00000015',
-    borderRadius: '15px'
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+    width: '22%',
+    minWidth: '22%',
+    padding: 10,
+    margin: 10,
+    boxSizing: 'border-box',
+    border: `2px solid ${theme.palette.primary.main}`
+  },
+  projectImage: {
+    width: '100%'
   },
   icon: {
-    color: 'grey',
+    cursor: 'pointer',
+    color: theme.palette.secondary.light,
     '&:hover': {
-      // color: theme.colorPrimary
+      color: theme.palette.secondary.main
     }
   }
 }));
@@ -72,18 +79,18 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
         <p onClick={goBack}>{`<< BACK`}</p>
       </div>
       <p className={classes.blurb}>
-        While at the General Assembly in 2018 we completed 4 projects over the three months of the
+        While at the General Assembly in 2018 I completed four projects over the three months of the
         web development immersive. The aim was to put into practice what we had learned in the
-        classroom in the previous weeks. The projects represent a progression from vanilla
-        Javascript, CSS and HTML with “Battle Command” through to a full-stack RESTful MERN app with
-        Grit. Click the Github icon to see the README and the Chrome icon to visit the app.
+        classroom. The projects represent a progression from vanilla Javascript through to
+        full-stack RESTful web apps written with modern frameworks like AngularJS and React.
       </p>
 
       <section className={classes.projects}>
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>One: Battle Command</p>
+          <p className={classes.projectTitle}>Project One</p>
+          <p className={classes.projectTitle}>Battle Command</p>
           <img
-            style={{ width: '100%' }}
+            className={classes.projectImage}
             src={battleCommand}
             alt="project one screen shot: battle command"
           />
@@ -95,7 +102,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-github-square" />
+            <i className="fab fa-2x fa-github-square" />
           </a>
           <a
             id="primary-project"
@@ -104,13 +111,14 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-chrome" />
+            <i className="fab fa-2x fa-chrome" />
           </a>
         </div>
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Two: Nice Rocks</p>
+          <p className={classes.projectTitle}>Project Two</p>
+          <p className={classes.projectTitle}>Nice Rocks</p>
           <img
-            style={{ width: '100%' }}
+            className={classes.projectImage}
             src={niceRocks}
             alt="project two screen shot: nice rocks"
           />
@@ -124,7 +132,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-github-square" />
+            <i className="fab fa-2x fa-github-square" />
           </a>
           <a
             id="primary-project"
@@ -133,13 +141,14 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-chrome" />
+            <i className="fab fa-2x fa-chrome" />
           </a>
         </div>
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Three: Resolut</p>
+          <p className={classes.projectTitle}>Project Three</p>
+          <p className={classes.projectTitle}>Resolut</p>
           <img
-            style={{ width: '100%' }}
+            className={classes.projectImage}
             src={resolut}
             alt="project one screen shot: battle command"
           />
@@ -153,7 +162,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-github-square" />
+            <i className="fab fa-2x fa-github-square" />
           </a>
           <a
             id="primary-project"
@@ -162,12 +171,17 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-chrome" />
+            <i className="fab fa-2x fa-chrome" />
           </a>
         </div>
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Four: Grit</p>
-          <img style={{ width: '100%' }} src={grit} alt="project one screen shot: battle command" />
+          <p className={classes.projectTitle}>Project Four</p>
+          <p className={classes.projectTitle}>Grit</p>
+          <img
+            className={classes.projectImage}
+            src={grit}
+            alt="project one screen shot: battle command"
+          />
           <p className={classes.caption}>
             MERN stack single page web app. Social fitness tracker community
           </p>
@@ -178,7 +192,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-github-square" />
+            <i className="fab fa-2x fa-github-square" />
           </a>
           <a
             id="primary-project"
@@ -187,7 +201,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
             className={classes.icon}
             rel="noopener noreferrer"
           >
-            <i className="fab fa-3x fa-chrome" />
+            <i className="fab fa-2x fa-chrome" />
           </a>
         </div>
       </section>

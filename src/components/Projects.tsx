@@ -49,7 +49,7 @@ export default function Projects() {
   //@ts-ignore
   const theme: Theme = useTheme();
   const classes: any = useStyles({ theme });
-  const [project, setProject] = useState<'stockman' | 'prototype' | 'assembly' | null>(null);
+  const [project, setProject] = useState<'stockman' | 'prototype' | 'assembly' | null>('assembly');
 
   return (
     <>

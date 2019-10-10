@@ -60,8 +60,9 @@ const theme: Theme = {
     },
     headerTertiary: {
       fontFamily: 'Roboto',
-      fontSize: 24,
-      fontWeight: 'regular'
+      fontSize: 20,
+      fontWeight: 'bold',
+      paddingBottom: 8
     },
     caption: {
       fontFamily: 'Roboto',
