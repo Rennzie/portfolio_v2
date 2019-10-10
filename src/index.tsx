@@ -29,6 +29,7 @@ export type Theme = {
   palette: { primary: Color; secondary: Color };
   typography: {
     body: Type;
+    headerPrimary: Type;
     headerSecondary: Type;
     headerTertiary: Type;
     caption: Type;
@@ -56,6 +57,11 @@ const theme: Theme = {
       fontSize: 20,
       lineHeight: '1.8rem',
       paddingBottom: 16
+    },
+    headerPrimary: {
+      fontFamily: 'Roboto',
+      fontSize: 40
+      // fontWeight: 'bold'
     },
     headerSecondary: {
       fontFamily: 'Roboto',

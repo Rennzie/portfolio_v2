@@ -2,9 +2,9 @@ import React, { CSSProperties } from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
-const useStyles = createUseStyles({
-  skillsAndTech: {
-    // gridRowStart: 'span 2'
+const useStyles = createUseStyles((theme: Theme) => ({
+  blurb: {
+    ...theme.typography.body
   },
   skillThermometer: {
     display: 'flex',
@@ -12,39 +12,52 @@ const useStyles = createUseStyles({
     justifyContent: 'space-around'
   },
   thermometer: {
-    height: 25,
-    width: '100%',
-    background: 'linear-gradient(90deg, rgba(250,217,97,1) 0%, rgba(247,107,28,1) 100%)',
-    borderRadius: 12.5,
     display: 'flex',
     flexDirection: 'row-reverse',
-    // flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginTop: 30,
-    marginBottom: 30
+    height: 40,
+    width: '100%',
+    marginBottom: '30px',
+    background: 'linear-gradient(90deg, rgba(250,217,97,1) 0%, rgba(247,107,28,1) 100%)',
+    borderRadius: 20
   },
   thermoText: {
     fontFamily: 'Roboto',
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white'
     // transform: 'rotate(-90deg) '
   },
   skills: {
-    // height: ,
     width: '100%',
     display: 'flex',
     flexDirection: 'row-reverse',
-
     justifyContent: 'space-around',
     alignItems: 'flex-start'
   },
+  skillSet: {
+    display: 'flex',
+    flexGrow: 1,
+    flexDirection: 'column'
+  },
   skill: {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'flex-start',
+    paddingBottom: 14,
+    paddingLeft: 50
+    // alignItems: 'f'
+  },
+  skillIcon: {
+    width: '10%',
+    alignSelf: 'flex-end'
+  },
+  skillText: {
     fontFamily: 'Roboto Mono',
-    paddingBottom: '10px',
     fontWeight: 'light'
   }
-});
+}));
 
 type Skill = { icon: string; name: string };
 
@@ -90,23 +103,31 @@ const skills: Skill[][] = [
 export default function SkillsBar() {
   //@ts-ignore
   const theme: Theme = useTheme();
-  const classes = useStyles({ theme });
+  const classes: any = useStyles({ theme });
   return (
     <section className={classes.skillsAndTech}>
-      <h2 style={{ ...theme.typography.headerSecondary } as CSSProperties}>Skills and Tech</h2>
+      <h2 style={{ ...theme.typography.headerPrimary } as CSSProperties}>Skills and Tech</h2>
+      <p className={classes.blurb}>
+        The techonologies and skills I am familiar with. The vertical ordering also indicates my
+        confidence in ability in descending order
+      </p>
       <div className={classes.skillThermometer}>
         <div className={classes.thermometer}>
           <h6 className={classes.thermoText}>Confident</h6>
           <h6 className={classes.thermoText}>Comfortable</h6>
           <h6 className={classes.thermoText}>Learning</h6>
         </div>
+
         <div className={classes.skills}>
           {skills.map(skillSet => (
-            <div>
+            <div className={classes.skillSet}>
               {skillSet.map(skill => (
-                <p className={classes.skill} style={{ paddingLeft: skill.icon ? 0 : 27 }}>
-                  <i className={skill.icon} /> {skill.name}
-                </p>
+                <div className={classes.skill}>
+                  <div className={classes.skillIcon}>
+                    <i className={skill.icon} />
+                  </div>
+                  <p className={classes.skillText}>{skill.name}</p>
+                </div>
               ))}
             </div>
           ))}
@@ -115,3 +136,4 @@ export default function SkillsBar() {
     </section>
   );
 }
+//
