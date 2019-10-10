@@ -5,6 +5,10 @@ import { Theme } from '..';
 import stockmanScreenShots from '../assets/stockman-screen-shots-icon-style.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
+  section: {
+    gridColumnStart: 'span 3'
+    // borderBottom: `2px solid ${theme.colorPrimary}`
+  },
   projectHeader: {
     ...theme.typography.headerSecondary
   },
@@ -17,9 +21,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   screenShots: {
     width: '80%'
-  },
-  section: {
-    borderBottom: `2px solid ${theme.colorPrimary}`
   }
 }));
 

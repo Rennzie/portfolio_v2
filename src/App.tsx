@@ -1,14 +1,53 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { Machine } from 'xstate';
+import { useMachine } from '@xstate/react';
 
 import {
-  LandingZone,
+  NavDrawer,
   Profile,
   SkillsBar,
   ProjectStockman,
   ProjectStockmanProto,
-  ProjectsGeneralAssembly
+  ProjectsGeneralAssembly,
+  AboutThisPage,
+  Footer
 } from './components';
+
+const navMachine = Machine({
+  id: 'navMachine',
+  initial: 'profile',
+  states: {
+    profile: {
+      on: {
+        PROJECTS: 'projects',
+        SKILLS: 'skills',
+        ABOUT: 'about'
+      }
+    },
+    projects: {
+      on: {
+        PROFILE: 'profile',
+        SKILLS: 'skills',
+        ABOUT: 'about'
+      }
+    },
+    skills: {
+      on: {
+        PROFILE: 'profile',
+        PROJECTS: 'projects',
+        ABOUT: 'about'
+      }
+    },
+    about: {
+      on: {
+        PROFILE: 'profile',
+        PROJECTS: 'projects',
+        SKILLS: 'skills'
+      }
+    }
+  }
+});
 
 const useStyles = createUseStyles({
   appWrapperGrid: {
@@ -23,26 +62,35 @@ const useStyles = createUseStyles({
     gridColumnStart: '2',
     gridRowStart: '2',
     display: 'grid',
-    gridTemplateColumns: '900px 1fr',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    girdTemplateRows: 'repeat(6,1fr)',
+    gridRowGap: '25px',
     gridTemplateRows: '1fr',
-    gridRowGap: '25px'
+
+    '@media(max-width:720px)': {
+      gridTemplateColumns: '1fr',
+      gridTemplateRows: ''
+    }
   }
 });
 
 function App() {
   const classes = useStyles();
+  const [{ value: location }, send] = useMachine(navMachine);
+  const handleNextLocation = (nextLocation: string) => () => send(nextLocation);
+
   return (
-    <main className={classes.appWrapperGrid}>
-      <LandingZone />
-      <section className={classes.bodyWrapperGrid}>
+    <>
+      <NavDrawer location={location} handleNextLocation={handleNextLocation} />
+      {/* <section className={classes.bodyWrapperGrid}>
         <Profile />
-        <SkillsBar />
         <ProjectStockman />
+        <SkillsBar />
         <ProjectStockmanProto />
-        <div>time line</div>
         <ProjectsGeneralAssembly />
-      </section>
-    </main>
+        <AboutThisPage />
+      </section> */}
+    </>
   );
 }
 

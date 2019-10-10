@@ -4,7 +4,7 @@ import { Theme } from '..';
 
 const useStyles = createUseStyles({
   skillsAndTech: {
-    gridRowStart: 'span 2'
+    // gridRowStart: 'span 2'
   },
   skillThermometer: {
     display: 'flex',

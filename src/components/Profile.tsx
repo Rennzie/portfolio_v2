@@ -6,12 +6,16 @@ import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   gridWrapper: {
+    // gridColumnStart: 'span 4',
+    // '@media(max-width:720px)': {
+    //   gridColumnStart: '1'
+    // },
     maxWidth: theme.spacing.pageWidth.max,
     margin: '0 auto',
     display: 'grid',
     gridTemplateColumns: '1fr 3fr',
-    gridTemplateRows: '1fr 1fr',
-    borderBottom: `2px solid ${theme.colorPrimary}`
+    gridTemplateRows: '1fr 1fr'
+    // borderBottom: `2px solid ${theme.colorPrimary}`
     // gridColumnGap: '5%',
     // boxSizing: 'border-box',
     // padding: '2% 5%'
@@ -52,7 +56,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   findMeOnIcon: {
     color: 'grey',
     '&:hover': {
-      color: theme.colorPrimary
+      // color: theme.colorPrimary
     }
   },
   constactEmail: {

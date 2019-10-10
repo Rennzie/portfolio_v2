@@ -5,18 +5,33 @@ import { ThemeProvider } from 'react-jss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+type Color = {
+  main: string;
+  light: string;
+  dark: string;
+  text?: string;
+};
+
+type Type = {
+  fontFamily: string;
+  fontSize: number;
+  lineHeight?: string;
+  fontWeight?: string;
+  paddingBottom?: number;
+};
+
 export type Theme = {
   spacing: {
     pageWidth: {
       max: number;
     };
   };
-  colorPrimary: string;
+  palette: { primary: Color; secondary: Color };
   typography: {
-    body: { fontFamily: string; fontSize: number; lineHeight: string; paddingBottom: number };
-    headerSecondary: { fontFamily: string; fontSize: number; fontWeight: string };
-    headerTertiary: { fontFamily: string; fontSize: number; fontWeight: string };
-    caption: { fontFamily: string; fontSize: number; fontWeight: string };
+    body: Type;
+    headerSecondary: Type;
+    headerTertiary: Type;
+    caption: Type;
   };
 };
 
@@ -26,7 +41,15 @@ const theme: Theme = {
       max: 1200
     }
   },
-  colorPrimary: '#e3a857',
+  palette: {
+    primary: {
+      main: '#d65f09',
+      light: '#ff8f3f',
+      dark: '#ae7100',
+      text: '#000000'
+    },
+    secondary: { main: '#097ccf', light: '#5eabff', dark: '#00519d' }
+  },
   typography: {
     body: {
       fontFamily: 'Roboto',

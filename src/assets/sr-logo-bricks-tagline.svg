@@ -19,7 +19,7 @@
                     <use xlink:href="#path-2"></use>
                 </g>
             </g>
-            <g id="Group" transform="translate(358.000000, 108.000000)" fill="#F5A623" stroke="#FFFFFF" stroke-width="0.5">
+            <g id="Group" transform="translate(358.000000, 108.000000)" fill="#9e3000" stroke="#d65f09" stroke-width="0.5">
                 <rect id="Rectangle" x="124.25" y="12.25" width="30.5" height="16.5"></rect>
                 <rect id="Rectangle" x="93.25" y="29.25" width="30.5" height="16.5"></rect>
                 <rect id="Rectangle" x="81.25" y="0.25" width="30.5" height="16.5"></rect>
@@ -37,22 +37,22 @@
                 <rect id="Rectangle" transform="translate(77.500000, 88.500000) scale(-1, 1) translate(-77.500000, -88.500000) " x="62.25" y="80.25" width="30.5" height="16.5"></rect>
                 <rect id="Rectangle" transform="translate(46.500000, 88.500000) scale(-1, 1) translate(-46.500000, -88.500000) " x="31.25" y="80.25" width="30.5" height="16.5"></rect>
             </g>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(15.500000, 128.500000) scale(-1, 1) translate(-15.500000, -128.500000) " x="0.125" y="120.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(46.500000, 145.500000) scale(-1, 1) translate(-46.500000, -145.500000) " x="31.125" y="137.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(58.500000, 116.500000) scale(-1, 1) translate(-58.500000, -116.500000) " x="43.125" y="108.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(108.500000, 179.500000) scale(-1, 1) translate(-108.500000, -179.500000) " x="93.125" y="171.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(77.500000, 162.500000) scale(-1, 1) translate(-77.500000, -162.500000) " x="62.125" y="154.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" transform="translate(139.500000, 196.500000) scale(-1, 1) translate(-139.500000, -196.500000) " x="124.125" y="188.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="0.125" y="188.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="0.125" y="171.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="0.125" y="154.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="31.125" y="154.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="0.125" y="137.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="31.125" y="171.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="62.125" y="171.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="31.125" y="188.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="62.125" y="188.125" width="30.75" height="16.75"></rect>
-            <rect id="Rectangle" stroke="#F5A623" stroke-width="0.25" x="93.125" y="188.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(15.500000, 128.500000) scale(-1, 1) translate(-15.500000, -128.500000) " x="0.125" y="120.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(46.500000, 145.500000) scale(-1, 1) translate(-46.500000, -145.500000) " x="31.125" y="137.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(58.500000, 116.500000) scale(-1, 1) translate(-58.500000, -116.500000) " x="43.125" y="108.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(108.500000, 179.500000) scale(-1, 1) translate(-108.500000, -179.500000) " x="93.125" y="171.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(77.500000, 162.500000) scale(-1, 1) translate(-77.500000, -162.500000) " x="62.125" y="154.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" transform="translate(139.500000, 196.500000) scale(-1, 1) translate(-139.500000, -196.500000) " x="124.125" y="188.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="0.125" y="188.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="0.125" y="171.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="0.125" y="154.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="31.125" y="154.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="0.125" y="137.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="31.125" y="171.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="62.125" y="171.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="31.125" y="188.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="62.125" y="188.125" width="30.75" height="16.75"></rect>
+            <rect id="Rectangle" stroke="#d65f09" fill="#9e3000" stroke-width="0.25" x="93.125" y="188.125" width="30.75" height="16.75"></rect>
         </g>
     </g>
 </svg>

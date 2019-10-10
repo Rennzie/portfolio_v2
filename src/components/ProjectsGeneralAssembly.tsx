@@ -8,6 +8,13 @@ import resolut from '../assets/resolute-cropped-1200x1200.png';
 import grit from '../assets/grit-dashboard-cropped-1200x1200.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
+  section: {
+    gridColumnStart: 'span 4',
+    '@media(max-width:720px)': {
+      gridColumnStart: '1'
+    }
+    // borderBottom: `2px solid ${theme.colorPrimary}`
+  },
   projectHeader: {
     ...theme.typography.headerSecondary
   },
@@ -27,9 +34,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
   screenShots: {
     width: '80%'
   },
-  section: {
-    borderBottom: `2px solid ${theme.colorPrimary}`
-  },
   projects: {
     display: 'flex',
     justifyContent: 'space-between'
@@ -44,7 +48,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   icon: {
     color: 'grey',
     '&:hover': {
-      color: theme.colorPrimary
+      // color: theme.colorPrimary
     }
   }
 }));

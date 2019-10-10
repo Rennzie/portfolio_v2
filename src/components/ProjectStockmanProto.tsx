@@ -4,6 +4,13 @@ import prototypeScreenShots from '../assets/livestock-manage-prototype-screens.p
 import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
+  section: {
+    gridColumnStart: 'span 4',
+    '@media(max-width:720px)': {
+      gridColumnStart: '1'
+    }
+    // borderBottom: `2px solid ${theme.colorPrimary}`
+  },
   projectHeader: {
     ...theme.typography.headerSecondary
   },
@@ -16,9 +23,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   screenShots: {
     width: '80%'
-  },
-  section: {
-    borderBottom: `2px solid ${theme.colorPrimary}`
   }
 }));
 
