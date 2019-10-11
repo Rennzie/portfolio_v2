@@ -13,11 +13,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    '& p': {
-      cursor: 'pointer',
-      color: theme.palette.secondary.main,
-      ...theme.typography.body
-    },
     paddingBottom: 20
   },
   header: {
@@ -112,24 +107,25 @@ export default function ProjectStockman({ goBack }: Props) {
       <div className={classes.tech}>
         <h6 className={classes.aboutHeader}>Technologies</h6>
         <div className={classes.techTags}>
-          <Tag>React </Tag>
-          <Tag>Typescript </Tag>
-          <Tag>Apollo Client</Tag>
-          <Tag>Apollo Server</Tag>
-          <Tag>Gitlab CI/CD </Tag>
-          <Tag>Amazon Web Services </Tag>
-          <Tag>Serverless </Tag>
-          <Tag>Jest </Tag>
-          <Tag>React Router </Tag>
-          <Tag>PostgresSQL </Tag>
-          <Tag>Knex </Tag>
-          <Tag>Material-UI </Tag>
-          <Tag>Recharts </Tag>
-          <Tag>Moment </Tag>
-          <Tag>Redux </Tag>
-          <Tag>React Google Maps </Tag>
-          <Tag>GraphQL</Tag>
-          <Tag>AWS Lambda</Tag>
+          <Tag>react </Tag>
+          <Tag>typescript </Tag>
+          <Tag>apollo client</Tag>
+          <Tag>apollo server</Tag>
+          <Tag>gitlab ci/cd </Tag>
+          <Tag>amazon web services </Tag>
+          <Tag>serverless </Tag>
+          <Tag>jest </Tag>
+          <Tag>react router </Tag>
+          <Tag>postgressql </Tag>
+          <Tag>knex </Tag>
+          <Tag>material-ui </Tag>
+          <Tag>recharts </Tag>
+          <Tag>moment </Tag>
+          <Tag>redux </Tag>
+          <Tag>react google gaps api </Tag>
+          <Tag>graphql</Tag>
+          <Tag>node</Tag>
+          <Tag>aws lambda</Tag>
         </div>
       </div>
       <div className={classes.tech}>
