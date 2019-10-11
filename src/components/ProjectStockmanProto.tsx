@@ -4,7 +4,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import prototypeScreenShots from '../assets/livestock-manage-prototype-screens.png';
 import { Theme } from '..';
-import Button from './Button';
+import Button from './BuildComponents/Button';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   head: {

@@ -29,13 +29,6 @@ export type Theme = {
     headerTertiary: Type;
     caption: Type;
   };
-  tag: {
-    fontFamily: string;
-    fontSize: number | string;
-    padding: number | string;
-    margin: number | string;
-    backgroundColor: string;
-  };
 };
 
 const theme: Theme = {
@@ -77,13 +70,6 @@ const theme: Theme = {
       fontWeight: 'lighter',
       lineHeight: '1.5rem'
     }
-  },
-  tag: {
-    fontFamily: 'Roboto Mono',
-    fontSize: 14,
-    padding: 8,
-    margin: 2,
-    backgroundColor: '#ff8f3f'
   }
 };
 

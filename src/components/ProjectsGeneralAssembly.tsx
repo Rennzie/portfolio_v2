@@ -4,7 +4,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
-import Button from './Button';
+import Button from './BuildComponents/Button';
 import battleCommand from '../assets/battle-command-board-cropped-1200x1200.png';
 import niceRocks from '../assets/nice-rocks-show-page-cropped-1200x1200.png';
 import resolut from '../assets/resolute-cropped-1200x1200.png';
@@ -46,7 +46,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexGrow: 1,
-    width: '25%',
+    width: '20%',
     minWidth: 200,
     maxWidth: 250,
     padding: 10,
@@ -148,7 +148,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-lg fa-external-link-alt" />
+                <i className="fas fa-lg fa-external-link-square-alt" />
               </a>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-lg fa-external-link-alt" />
+                <i className="fas fa-lg fa-external-link-square-alt" />
               </a>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-lg fa-external-link-alt" />
+                <i className="fas fa-lg fa-external-link-square-alt" />
               </a>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fas fa-lg fa-external-link-alt" />
+                <i className="fas fa-lg fa-external-link-square-alt" />
               </a>
             </div>
           </div>
