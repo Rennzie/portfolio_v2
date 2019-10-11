@@ -4,6 +4,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
+import Button from './Button';
 import battleCommand from '../assets/battle-command-board-cropped-1200x1200.png';
 import niceRocks from '../assets/nice-rocks-show-page-cropped-1200x1200.png';
 import resolut from '../assets/resolute-cropped-1200x1200.png';
@@ -29,11 +30,10 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignText: 'justify',
     paddingBottom: 30
   },
-  projectTitle: {
-    ...theme.typography.headerTertiary
-  },
+
   caption: {
-    ...theme.typography.caption
+    ...theme.typography.caption,
+    padding: '20px 0px'
   },
   projects: {
     display: 'flex',
@@ -43,18 +43,43 @@ const useStyles = createUseStyles((theme: Theme) => ({
   projectCard: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     flexGrow: 1,
-    width: '22%',
-    minWidth: '22%',
+    width: '25%',
+    minWidth: 200,
+    maxWidth: 250,
     padding: 10,
-    margin: 10,
+    margin: '10px 5px',
     boxSizing: 'border-box',
     border: `2px solid ${theme.palette.primary.main}`
   },
+  projectHead: {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between'
+  },
+  projectTitle: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    ...theme.typography.headerTertiary,
+    paddingBottom: 0,
+    '& p:first-child': {
+      paddingBottom: 12
+    },
+    '& p:last-child': {
+      fontWeight: 'normal!important'
+      // color: 'red'
+    }
+  },
   projectImage: {
     width: '100%'
+  },
+  projectIcons: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around'
   },
   icon: {
     cursor: 'pointer',
@@ -76,133 +101,186 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
     <section>
       <div className={classes.head}>
         <h2 className={classes.header}>General Assembly, London</h2>
-        <p onClick={goBack}>{`<< BACK`}</p>
+        <Button onClick={goBack}>BACK</Button>
       </div>
       <p className={classes.blurb}>
-        While at the General Assembly in 2018 I completed four projects over the three months of the
-        web development immersive. The aim was to put into practice what we had learned in the
-        classroom. The projects represent a progression from vanilla Javascript through to
-        full-stack RESTful web apps written with modern frameworks like AngularJS and React.
+        While at General Assembly in 2018 I completed four projects over the three months of the{' '}
+        <span>
+          <a
+            href="https://generalassemb.ly/education/software-engineering-immersive/paris"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'black' }}
+          >
+            Web Development Immersive
+          </a>
+        </span>
+        . The aim was to put into practice what we had learned in the classroom. The projects
+        represent a progression from vanilla Javascript through to full-stack RESTful web apps
+        written with modern frameworks like AngularJS and React. Check out the project pages or the
+        README's on Github.
       </p>
 
+      {/*-----------------------
+          PROJECT ONE
+        ------------------------ */}
       <section className={classes.projects}>
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Project One</p>
-          <p className={classes.projectTitle}>Battle Command</p>
+          <div className={classes.projectHead}>
+            <div className={classes.projectTitle}>
+              <p>Project One</p>
+              <p>Battle Command</p>
+            </div>
+            <div className={classes.projectIcons}>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://github.com/rennzie/two-person-shooter-game-ga-wdi-prj1"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-github-square" />
+              </a>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="http://seanrennie.com/two-person-shooter-game-ga-wdi-prj1"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-chrome" />
+              </a>
+            </div>
+          </div>
+          <p className={classes.caption}>
+            A multi-player shooter game built with vanilla Javascript, CSS and HTML.
+          </p>
           <img
             className={classes.projectImage}
             src={battleCommand}
             alt="project one screen shot: battle command"
           />
-          <p className={classes.caption}>Vanilla JS, CSS and HTML app. Multiplater shooter game</p>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://github.com/rennzie/two-person-shooter-game-ga-wdi-prj1"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-github-square" />
-          </a>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="http://seanrennie.com/two-person-shooter-game-ga-wdi-prj1"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-chrome" />
-          </a>
         </div>
+
+        {/*-----------------------
+            PROJECT TWO
+        ------------------------ */}
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Project Two</p>
-          <p className={classes.projectTitle}>Nice Rocks</p>
+          <div className={classes.projectHead}>
+            <div className={classes.projectTitle}>
+              <p>Project Two:</p>
+              <p>Nice Rocks</p>
+            </div>
+            <div className={classes.projectIcons}>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://github.com/rennzie/geotourism-reviewpage-ga-wdi-prj2"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-github-square" />
+              </a>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://nice-rocks.herokuapp.com/"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-chrome" />
+              </a>
+            </div>
+          </div>
+          <p className={classes.caption}>
+            A geological tourism review site built as a full-stack Express.js web app.
+          </p>
           <img
             className={classes.projectImage}
             src={niceRocks}
             alt="project two screen shot: nice rocks"
           />
-          <p className={classes.caption}>
-            Full-stack express app. Geological tourism site review app.
-          </p>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://github.com/rennzie/geotourism-reviewpage-ga-wdi-prj2"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-github-square" />
-          </a>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://nice-rocks.herokuapp.com/"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-chrome" />
-          </a>
         </div>
+
+        {/*-----------------------
+            PROJECT THREE
+        ------------------------ */}
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Project Three</p>
-          <p className={classes.projectTitle}>Resolut</p>
+          <div className={classes.projectHead}>
+            <div className={classes.projectTitle}>
+              <p>Project Three</p>
+              <p>Resolut</p>
+            </div>
+            <div className={classes.projectIcons}>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://github.com/rennzie/personal-tracking-app-ga-wdi-prj3"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-github-square" />
+              </a>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://intense-beyond-35594.herokuapp.com/#!/"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-chrome" />
+              </a>
+            </div>
+          </div>
+          <p className={classes.caption}>
+            Goal tracking and event finder built with AngularJS, Express and MongoDB.
+          </p>
           <img
             className={classes.projectImage}
             src={resolut}
             alt="project one screen shot: battle command"
           />
-          <p className={classes.caption}>
-            MEAN stack single page web app. Event finding and goal tracking{' '}
-          </p>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://github.com/rennzie/personal-tracking-app-ga-wdi-prj3"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-github-square" />
-          </a>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://intense-beyond-35594.herokuapp.com/#!/"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-chrome" />
-          </a>
         </div>
+
+        {/*-----------------------
+            PROJECT FOUR
+        ------------------------ */}
         <div className={classes.projectCard}>
-          <p className={classes.projectTitle}>Project Four</p>
-          <p className={classes.projectTitle}>Grit</p>
+          <div className={classes.projectHead}>
+            <div className={classes.projectTitle}>
+              <p>Project Four</p>
+              <p>Grit</p>
+            </div>
+            <div className={classes.projectIcons}>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://github.com/Rennzie/social-fitness-app-ga-wdi-prj4"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-github-square" />
+              </a>
+              <a
+                id="primary-project"
+                target="_blank"
+                href="https://grit-app.herokuapp.com/"
+                className={classes.icon}
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-lg fa-chrome" />
+              </a>
+            </div>
+          </div>
+          <p className={classes.caption}>
+            Social fitness community for tracking exercise progress for your tribe. Built with
+            React, Express and MongoDB.
+          </p>
           <img
             className={classes.projectImage}
             src={grit}
             alt="project one screen shot: battle command"
           />
-          <p className={classes.caption}>
-            MERN stack single page web app. Social fitness tracker community
-          </p>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://github.com/Rennzie/social-fitness-app-ga-wdi-prj4"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-github-square" />
-          </a>
-          <a
-            id="primary-project"
-            target="_blank"
-            href="https://grit-app.herokuapp.com/"
-            className={classes.icon}
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-2x fa-chrome" />
-          </a>
         </div>
       </section>
     </section>

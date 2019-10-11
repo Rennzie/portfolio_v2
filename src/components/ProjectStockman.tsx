@@ -4,6 +4,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
+import Button from './Button';
 import stockmanScreenShots from '../assets/stockman-screen-shots-icon-style.png';
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -15,17 +16,49 @@ const useStyles = createUseStyles((theme: Theme) => ({
       cursor: 'pointer',
       color: theme.palette.secondary.main,
       ...theme.typography.body
-    }
+    },
+    paddingBottom: 20
   },
   header: {
-    paddingBottom: 20,
     ...theme.typography.headerPrimary
+  },
+  aboutHeader: {
+    ...theme.typography.headerTertiary
   },
   blurb: {
     ...theme.typography.body
   },
+  about: {
+    display: 'flex'
+  },
+  achievements: {
+    padding: 16,
+    boxSizing: 'border-box',
+    width: '50%'
+  },
+  tech: {
+    padding: 16,
+    boxSizing: 'border-box',
+    width: '50%'
+  },
   screenShots: {
-    width: '80%'
+    height: 300,
+    width: 'auto'
+  },
+  primaryImage: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '40px 0'
+  },
+
+  techTags: {
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  techTag: {
+    ...theme.tag
   }
 }));
 
@@ -40,43 +73,58 @@ export default function ProjectStockman({ goBack }: Props) {
     <section className={classes.section}>
       <div className={classes.head}>
         <h2 className={classes.header}>The Stockman</h2>
-        <p onClick={goBack}>{`<< BACK`}</p>
+        <Button onClick={goBack}>BACK</Button>
       </div>
       <p className={classes.blurb}>
-        A SaaS platform for grassland livestock farmers. The goal was to build a tool that helps
-        livestock farmers be more efficient and therefore more profitable. Also to save time by
-        removing the overhead of manual/traditional grassland management. We do this by tracking
-        metrics like rainfall, livestock numbers and herd movements. From these the platform can
-        calculate stocking rate and camp production which are essential to good management and
-        decision making.
+        A SaaS platform for grassland livestock management. Farmers can track animal numbers, record
+        rainfall and log herd movements.
       </p>
-      <p className={classes.blurb}>
-        This is an active project that is part of Bulrush Agritech, the start up I co-founded with
-        my wife. Please email me for access to the private GitLab repo.
-      </p>
-      <img className={classes.screenShots} src={stockmanScreenShots} alt="product screen shots" />
-      <div>
-        <p className={classes.blurb}>
-          CHALLENGES: My main challenges centered around choosing which technologies to use. I
-          wanted to try new technologies with this project, but also needed ones that had longevity
-          and community support. My three biggest changes from previous projects where to using
-          GraphQL, a relational database and Typescript. For graphQL I chose Apollo because it comes
-          with a number of great features out of the box like client side caching. It appeared to be
-          the most favoured graphQL library and has great community support, not to mention AirBnB’s
-          wholesale adoption of the technology. For the relational database I chose to go with
-          Postgres mostly because of the Knex.js library. Knex made it easy to write my database
-          queries in javascript keeping it simple. Typescript was a slower adoption, I originally
-          started the project in vanilla JS (the backend is still vanilla), but chose to adopt
-          Typescript for the learning challenge and for all the benefits static typing brings to a
-          project. The best feature for me however has been the improved DX in VS Code.
-        </p>
-        <p className={classes.blurb}>
-          Other major pain points where around the DevOp for the project. The project uses AWS for
-          all its hosting which I had never used before. Fortunately I had support from a friend who
-          runs a dev shop and was the motivator for me using AWS in the first place. With his help I
-          set up a fluid CI on gitlab to AWS, and I know have an ok understanding of serverless
-          architecture and project deployments.
-        </p>
+      <div className={classes.primaryImage}>
+        <img className={classes.screenShots} src={stockmanScreenShots} alt="product screen shots" />
+      </div>
+      <div className={classes.about}>
+        <div className={classes.achievements}>
+          <h6 className={classes.aboutHeader}>Achievements</h6>
+          <ul>
+            <li>
+              Selected technologies that are both exciting, have a large community and longevity
+            </li>
+            <li>Set up a CI/CD deployment pipline to AWS with Gitlab</li>
+            <li>Collaborated with UI/UX designers to build the client</li>
+            <li>Integrated google maps drawing library</li>
+            <li>Migrated front end to Typescript</li>
+            <li>Only used React Hooks (no classes)</li>
+            <li>Redux, but migrating to Apollo local state</li>
+            <li>Used Apollo's Graph Manager to intagrate datagraph with VS Code for improved DX</li>
+
+            <li>Designed and built a serveless graphQL API</li>
+            <li>Designed and built a normalised Postgres database</li>
+            <li>Full test coverage of the API</li>
+          </ul>
+        </div>
+        <div className={classes.tech}>
+          <h6 className={classes.aboutHeader}>Technologies</h6>
+          <div className={classes.techTags}>
+            <span className={classes.techTag}>React </span>
+            <span className={classes.techTag}>Typescript </span>
+            <span className={classes.techTag}>Apollo Client</span>
+            <span className={classes.techTag}>Apollo Server</span>
+            <span className={classes.techTag}>Gitlab CI/CD </span>
+            <span className={classes.techTag}>Amazon Web Services </span>
+            <span className={classes.techTag}>Serverless </span>
+            <span className={classes.techTag}>Jest </span>
+            <span className={classes.techTag}>React Router </span>
+            <span className={classes.techTag}>PostgresSQL </span>
+            <span className={classes.techTag}>Knex </span>
+            <span className={classes.techTag}>Material-UI </span>
+            <span className={classes.techTag}>Recharts </span>
+            <span className={classes.techTag}>Moment </span>
+            <span className={classes.techTag}>Redux </span>
+            <span className={classes.techTag}>React Google Maps </span>
+            <span className={classes.techTag}>GraphQL</span>
+            <span className={classes.techTag}>AWS Lambda</span>
+          </div>
+        </div>
       </div>
     </section>
   );

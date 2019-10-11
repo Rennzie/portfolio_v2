@@ -20,6 +20,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     width: '100%'
   },
   navCard: {
+    // color: 'white',
     width: '100%',
     padding: 16,
     borderBottom: `1px solid ${theme.palette.primary.dark}`,

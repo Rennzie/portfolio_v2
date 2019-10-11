@@ -4,6 +4,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import prototypeScreenShots from '../assets/livestock-manage-prototype-screens.png';
 import { Theme } from '..';
+import Button from './Button';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   head: {
@@ -44,7 +45,7 @@ export default function ProjectStockmanProto({ goBack }: Props) {
     <section className={classes.section}>
       <div className={classes.head}>
         <h2 className={classes.header}>Livestock management prototype</h2>
-        <p onClick={goBack}>{`<< BACK`}</p>
+        <Button onClick={goBack}>BACK</Button>
       </div>
       <p className={classes.blurb}>
         This was the precursor to what is no The Stockman. I combined the skills learned at General

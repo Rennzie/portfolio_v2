@@ -33,6 +33,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white'
+    // color: theme.palette.secondary.light
     // transform: 'rotate(-90deg) '
   },
   skills: {
