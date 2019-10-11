@@ -80,7 +80,7 @@ const theme: Theme = {
   },
   tag: {
     fontFamily: 'Roboto Mono',
-    fontSize: 16,
+    fontSize: 14,
     padding: 8,
     margin: 2,
     backgroundColor: '#ff8f3f'

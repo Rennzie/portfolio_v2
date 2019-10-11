@@ -148,7 +148,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-lg fa-chrome" />
+                <i className="fas fa-lg fa-external-link-alt" />
               </a>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-lg fa-chrome" />
+                <i className="fas fa-lg fa-external-link-alt" />
               </a>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-lg fa-chrome" />
+                <i className="fas fa-lg fa-external-link-alt" />
               </a>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function ProjectsGeneralAssembly({ goBack }: Props) {
                 className={classes.icon}
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-lg fa-chrome" />
+                <i className="fas fa-lg fa-external-link-alt" />
               </a>
             </div>
           </div>

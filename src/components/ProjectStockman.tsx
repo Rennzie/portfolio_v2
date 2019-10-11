@@ -42,7 +42,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     width: '50%'
   },
   screenShots: {
-    height: 300,
+    height: 500,
     width: 'auto'
   },
   primaryImage: {
@@ -51,7 +51,12 @@ const useStyles = createUseStyles((theme: Theme) => ({
     justifyContent: 'center',
     margin: '40px 0'
   },
-
+  achieveList: {},
+  achieveListItem: {
+    ...theme.typography.caption,
+    padding: '8px 0',
+    listStyleType: 'disc'
+  },
   techTags: {
     width: '100%',
     display: 'flex',
@@ -85,21 +90,29 @@ export default function ProjectStockman({ goBack }: Props) {
       <div className={classes.about}>
         <div className={classes.achievements}>
           <h6 className={classes.aboutHeader}>Achievements</h6>
-          <ul>
-            <li>
+          <ul className={classes.achieveListItem}>
+            <li className={classes.achieveListItem}>
               Selected technologies that are both exciting, have a large community and longevity
             </li>
-            <li>Set up a CI/CD deployment pipline to AWS with Gitlab</li>
-            <li>Collaborated with UI/UX designers to build the client</li>
-            <li>Integrated google maps drawing library</li>
-            <li>Migrated front end to Typescript</li>
-            <li>Only used React Hooks (no classes)</li>
-            <li>Redux, but migrating to Apollo local state</li>
-            <li>Used Apollo's Graph Manager to intagrate datagraph with VS Code for improved DX</li>
+            <li className={classes.achieveListItem}>
+              Set up a CI/CD deployment pipline to AWS with Gitlab
+            </li>
+            <li className={classes.achieveListItem}>
+              Collaborated with UI/UX designers to build the client
+            </li>
+            <li className={classes.achieveListItem}>Integrated google maps drawing library</li>
+            <li className={classes.achieveListItem}>Migrated front end to Typescript</li>
+            <li className={classes.achieveListItem}>Only used React Hooks (no classes)</li>
+            <li className={classes.achieveListItem}>Redux, but migrating to Apollo local state</li>
+            <li className={classes.achieveListItem}>
+              Used Apollo's Graph Manager to intagrate datagraph with VS Code for improved DX
+            </li>
 
-            <li>Designed and built a serveless graphQL API</li>
-            <li>Designed and built a normalised Postgres database</li>
-            <li>Full test coverage of the API</li>
+            <li className={classes.achieveListItem}>Designed and built a serveless graphQL API</li>
+            <li className={classes.achieveListItem}>
+              Designed and built a normalised Postgres database
+            </li>
+            <li className={classes.achieveListItem}>Full test coverage of the API</li>
           </ul>
         </div>
         <div className={classes.tech}>
