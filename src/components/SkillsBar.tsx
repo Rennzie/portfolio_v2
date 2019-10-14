@@ -17,6 +17,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around'
+    // TODO: flip to vertical at tablet breakpoint
   },
   thermometer: {
     display: 'flex',
@@ -34,8 +35,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white'
-    // color: theme.palette.secondary.light
-    // transform: 'rotate(-90deg) '
   },
   skills: {
     width: '100%',
@@ -55,7 +54,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     justifyContent: 'flex-start',
     paddingBottom: 14,
     paddingLeft: 50
-    // alignItems: 'f'
   },
   skillIcon: {
     width: '10%',
