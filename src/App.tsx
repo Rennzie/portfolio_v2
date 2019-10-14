@@ -7,7 +7,7 @@ import { NavDrawer, Profile, SkillsBar, Projects, AboutThisPage } from './compon
 
 const navMachine = Machine({
   id: 'navMachine',
-  initial: 'projects',
+  initial: 'profile',
   states: {
     profile: {
       on: {
