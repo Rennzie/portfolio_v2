@@ -4,14 +4,13 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import prototypeScreenShots from '../assets/livestock-manage-prototype-screens.png';
 import { Theme } from '..';
-import { Button, Tag, AchievementItem } from './BuildComponents';
+import { Button, Tags, Tag, AchievementItem, Grid, GridItem } from './BuildComponents';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   head: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingBottom: 20
+    alignItems: 'center'
   },
   header: {
     ...theme.typography.headerPrimary
@@ -22,11 +21,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
   primaryImage: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center',
-    margin: '40px 0'
+    justifyContent: 'center'
+    // margin: '40px 0'
   },
   screenShots: {
-    width: '80%'
+    width: '90%'
   },
   aboutHeader: {
     ...theme.typography.headerTertiary
@@ -35,17 +34,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     padding: '16px 0',
     boxSizing: 'border-box',
     width: '100%'
-  },
-  achievements: {
-    display: 'flex',
-    boxSizing: 'border-box',
-    justifyContent: 'space-between',
-    width: '100%'
-  },
-  techTags: {
-    width: '100%',
-    display: 'flex',
-    flexWrap: 'wrap'
   }
 }));
 
@@ -58,41 +46,57 @@ export default function ProjectStockmanProto({ goBack }: Props) {
   const classes: any = useStyles({ theme });
 
   return (
-    <section className={classes.section}>
-      <div className={classes.head}>
+    <Grid>
+      {/*-----------------------
+          HEADER
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.head}>
         <h2 className={classes.header}>Livestock management prototype</h2>
         <Button onClick={goBack}>BACK</Button>
-      </div>
-      <p className={classes.blurb}>
-        This was the precursor to what is now The Stockman. The app was hosted on Heroku and
-        essentially recorded livestock numbers for a farm.
-      </p>
-      <div className={classes.primaryImage}>
+      </GridItem>
+      <GridItem columnSpan={12}>
+        <p className={classes.blurb}>
+          This was the precursor to what is now The Stockman. The app was hosted on Heroku and
+          essentially recorded livestock numbers and rainfall for a farm.
+        </p>
+      </GridItem>
+
+      {/*-----------------------
+          SCREEN SHOTS
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.primaryImage}>
         <img
           className={classes.screenShots}
           src={prototypeScreenShots}
           alt="product screen shots"
         />
-      </div>
+      </GridItem>
 
-      <h6 className={classes.aboutHeader}>Achievements</h6>
-      <div className={classes.achievements}>
-        <div className={classes.achieveList}>
-          <AchievementItem>
-            Designed and built a fullstack React, MongoDB, Express and Node single page web app
-          </AchievementItem>
-          <AchievementItem>Configured my own webpack and babel</AchievementItem>
-          <AchievementItem> >85% test coverage of the API</AchievementItem>
-        </div>
+      {/*-----------------------
+          ACHIEVMENTS
+        ------------------------ */}
+      <GridItem columnSpan={12}>
+        <h6 className={classes.aboutHeader}>Achievements</h6>
+      </GridItem>
+      <GridItem columnSpan={6}>
+        <AchievementItem>
+          Designed and built a fullstack React, MongoDB, Express and Node single page web app
+        </AchievementItem>
+        <AchievementItem>Configured my own webpack and babel</AchievementItem>
+        <AchievementItem> >85% test coverage of the API</AchievementItem>
+      </GridItem>
 
-        <div className={classes.achieveList}>
-          <AchievementItem>Discovered limitations of No-SQL for relational data</AchievementItem>
-          <AchievementItem>Configured OAuth for Google with Passport and Socket.io</AchievementItem>
-        </div>
-      </div>
-      <div className={classes.tech}>
+      <GridItem columnSpan={6}>
+        <AchievementItem>Discovered limitations of No-SQL for relational data</AchievementItem>
+        <AchievementItem>Configured OAuth for Google with Passport and Socket.io</AchievementItem>
+      </GridItem>
+
+      {/*-----------------------
+          TECHNOLOGIES
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.tech}>
         <h6 className={classes.aboutHeader}>Technologies</h6>
-        <div className={classes.techTags}>
+        <Tags>
           <Tag>react </Tag>
           <Tag>material-ui </Tag>
           <Tag>axios </Tag>
@@ -112,10 +116,13 @@ export default function ProjectStockmanProto({ goBack }: Props) {
           <Tag> babel </Tag>
           <Tag> node </Tag>
           <Tag> heroku </Tag>
-        </div>
-      </div>
+        </Tags>
+      </GridItem>
 
-      <div className={classes.tech}>
+      {/*-----------------------
+          THE REST
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.tech}>
         <h6 className={classes.aboutHeader}>What Else...</h6>
         <p className={classes.blurb}>
           This project is no longer hosted but have a look at the code
@@ -132,7 +139,7 @@ export default function ProjectStockmanProto({ goBack }: Props) {
           </span>
           .
         </p>
-      </div>
-    </section>
+      </GridItem>
+    </Grid>
   );
 }
