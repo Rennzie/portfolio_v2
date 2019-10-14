@@ -80,6 +80,13 @@ export default function NavDrawer({ location, handleNextLocation }: Props) {
         >
           About the page
         </div>
+        <div
+          onClick={handleNextLocation('CONTACT')}
+          className={classes.navCard}
+          style={{ backgroundColor: location === 'contact' ? selected : '' }}
+        >
+          Contact Me
+        </div>
       </section>
     </div>
   );

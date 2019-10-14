@@ -3,16 +3,17 @@ import { createUseStyles } from 'react-jss';
 import { Machine } from 'xstate';
 import { useMachine } from '@xstate/react';
 
-import { NavDrawer, Profile, SkillsBar, Projects, AboutThisPage } from './components';
+import { Contact, NavDrawer, Profile, SkillsBar, Projects, AboutThisPage } from './components';
 
 const navMachine = Machine({
   id: 'navMachine',
-  initial: 'profile',
+  initial: 'contact',
   states: {
     profile: {
       on: {
         PROJECTS: 'projects',
         SKILLS: 'skills',
+        CONTACT: 'contact',
         ABOUT: 'about'
       }
     },
@@ -20,6 +21,7 @@ const navMachine = Machine({
       on: {
         PROFILE: 'profile',
         SKILLS: 'skills',
+        CONTACT: 'contact',
         ABOUT: 'about'
       }
     },
@@ -27,12 +29,22 @@ const navMachine = Machine({
       on: {
         PROFILE: 'profile',
         PROJECTS: 'projects',
+        CONTACT: 'contact',
         ABOUT: 'about'
       }
     },
     about: {
       on: {
         PROFILE: 'profile',
+        PROJECTS: 'projects',
+        CONTACT: 'contact',
+        SKILLS: 'skills'
+      }
+    },
+    contact: {
+      on: {
+        PROFILE: 'profile',
+        ABOUT: 'about',
         PROJECTS: 'projects',
         SKILLS: 'skills'
       }
@@ -67,6 +79,7 @@ function App() {
           {location === 'projects' && <Projects />}
           {location === 'skills' && <SkillsBar />}
           {location === 'about' && <AboutThisPage />}
+          {location === 'contact' && <Contact />}
         </section>
       </main>
     </>
