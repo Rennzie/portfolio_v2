@@ -1,6 +1,7 @@
 import React from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import { Theme } from '..';
+import { Grid, GridItem } from './BuildComponents';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   header: {
@@ -109,14 +110,14 @@ const skills: Skill[][] = [
 ];
 
 export default function SkillsBar() {
-  //@ts-ignore
-  const theme: Theme = useTheme();
-  const classes: any = useStyles({ theme });
+  const classes: any = useStyles();
   return (
-    <section className={classes.skillsAndTech}>
-      <h2 className={classes.header}>Skills and Tech</h2>
+    <Grid className={classes.skillsAndTech}>
+      <GridItem columnSpan={6}>
+        <h2 className={classes.header}>Skills and Tech</h2>
+      </GridItem>
       {/* <p className={classes.blurb}>The techonologies and skills I'm familiar with.</p> */}
-      <div className={classes.skillThermometer}>
+      <GridItem columnSpan={12} className={classes.skillThermometer}>
         <div className={classes.thermometer}>
           <h6 className={classes.thermoText}>Confident</h6>
           <h6 className={classes.thermoText}>Comfortable</h6>
@@ -137,8 +138,8 @@ export default function SkillsBar() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </GridItem>
+    </Grid>
   );
 }
 //
