@@ -1,14 +1,14 @@
 import React from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
-import { Theme } from '../..';
-const useStyles = createUseStyles((theme: Theme) => ({}));
+// import { useTheme } from 'react-jss';
+// import { Theme } from '../..';
+// const useStyles = createUseStyles((theme: Theme) => ({}));
 
 type Props = {
   children: React.ReactNode | string;
 };
 
 export default function Tag({ children }: Props) {
-  const theme: any = useTheme();
+  // const theme: any = useTheme();
   return (
     <span
       style={{

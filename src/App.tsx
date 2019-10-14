@@ -7,7 +7,7 @@ import { NavDrawer, Profile, SkillsBar, Projects, AboutThisPage } from './compon
 
 const navMachine = Machine({
   id: 'navMachine',
-  initial: 'projects',
+  initial: 'profile',
   states: {
     profile: {
       on: {
@@ -48,7 +48,7 @@ const useStyles = createUseStyles({
   pages: {
     height: '100vh',
     boxSizing: 'border-box',
-    padding: 60,
+    // padding: 60,
     overflow: 'scroll'
   }
 });

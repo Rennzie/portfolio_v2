@@ -1,8 +1,8 @@
 import React from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
-import { Theme } from '../..';
+import { useTheme } from 'react-jss';
+// import { Theme } from '../..';
 
-const useStyles = createUseStyles((theme: Theme) => ({}));
+// const useStyles = createUseStyles((theme: Theme) => ({}));
 
 type Props = {
   children: React.ReactNode | string;

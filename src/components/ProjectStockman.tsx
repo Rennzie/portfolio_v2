@@ -82,25 +82,27 @@ export default function ProjectStockman({ goBack }: Props) {
       <h6 className={classes.aboutHeader}>Achievements</h6>
       <div className={classes.achievements}>
         <div className={classes.achieveList}>
-          <AchievementItem>
-            Selected technologies that are both exciting, have a large community and longevity
-          </AchievementItem>
-          <AchievementItem>Set up a CI/CD deployment pipline to AWS with Gitlab</AchievementItem>
-          <AchievementItem>Collaborated with UI/UX designers to build the client</AchievementItem>
-          <AchievementItem>Integrated google maps drawing library</AchievementItem>
-          <AchievementItem>Migrated front end to Typescript</AchievementItem>
-        </div>
-
-        <div className={classes.achieveList}>
           <AchievementItem>Only used React Hooks (no classes)</AchievementItem>
           <AchievementItem>Redux, but migrating to Apollo local state</AchievementItem>
           <AchievementItem>
-            Used Apollo's Graph Manager to intagrate datagraph with VS Code for improved DX
+            Used Apollo's Graph Manager to integrate datagraph with VS Code for improved DX
           </AchievementItem>
 
           <AchievementItem>Designed and built a serveless graphQL API</AchievementItem>
           <AchievementItem>Designed and built a normalised PostgresSQL database</AchievementItem>
           <AchievementItem>Full test coverage of the API with Jest</AchievementItem>
+        </div>
+        <div className={classes.achieveList}>
+          <AchievementItem>
+            Selected technologies that are both have a large community & longevity and exciting to
+            learn
+          </AchievementItem>
+          <AchievementItem>Set up a CI/CD deployment pipline to AWS with Gitlab</AchievementItem>
+          <AchievementItem>
+            Collaborated with UI/UX designers to build the front-end
+          </AchievementItem>
+          <AchievementItem>Integrated the Google maps drawing library</AchievementItem>
+          <AchievementItem>Migrated front-end to Typescript</AchievementItem>
         </div>
       </div>
 
@@ -132,8 +134,7 @@ export default function ProjectStockman({ goBack }: Props) {
         <h6 className={classes.aboutHeader}>What Else...</h6>
         <p className={classes.blurb}>
           Please email me if you would like to see the code. It's hosted in a private repo as it's
-          still active and active project for Bulrush Agritech. Otherwise you have a look at the{' '}
-          {''}{' '}
+          still an active project for Bulrush Agritech. Otherwise have a look at the {''}{' '}
           <span>
             <a
               style={{ color: 'black' }}

@@ -15,7 +15,7 @@ type Color = {
 type Type = {
   fontFamily: string;
   fontSize: number;
-  lineHeight?: string;
+  lineHeight?: string | number;
   fontWeight?: string;
   paddingBottom?: number;
 };
@@ -45,8 +45,9 @@ const theme: Theme = {
     body: {
       fontFamily: 'Roboto',
       fontSize: 20,
-      lineHeight: '1.8rem',
-      paddingBottom: 16
+      lineHeight: '2rem',
+      paddingBottom: 16,
+      fontWeight: 'lighter'
     },
     headerPrimary: {
       fontFamily: 'Roboto',
@@ -55,8 +56,8 @@ const theme: Theme = {
     },
     headerSecondary: {
       fontFamily: 'Roboto',
-      fontSize: 30,
-      fontWeight: 'medium'
+      fontSize: 30
+      // fontWeight: 'medium'
     },
     headerTertiary: {
       fontFamily: 'Roboto',

@@ -1,50 +1,25 @@
 import React from 'react';
-import { useTheme, createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 
 import profilePicture from '../assets/profile-picture-sean-small-sqr.jpg';
+import { Grid, GridItem } from './BuildComponents';
 import { Theme } from '..';
 
 const useStyles = createUseStyles((theme: Theme) => ({
-  gridWrapper: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(5 1fr)',
-    gridTemplateRows: 'repeat(5 1fr)',
-    gridRowGap: 40
-  },
   contact: {
-    gridColumnStart: 'span 3',
-    gridRowStart: 'span 2',
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   picWrapper: {
-    gridColumnStart: 'span 2',
-    gridRowStart: 'span 2',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-
-  findMeOn: {
-    gridColumnStart: 'span 3',
-    gridRowStart: '3',
-    width: '100%',
-    display: 'flex',
-    // flexDirection: 'column',
-    justifyContent: 'space-around',
     alignItems: 'center'
-    // width: '35%'
-  },
-  bioWrapper: {
-    gridColumnStart: 'span 5',
-    gridRowStart: '2 span 2'
-    // paddingTop: 20
   },
   profilePic: {
     borderRadius: '100%',
-    width: 300,
+    width: '100%',
     height: 'auto'
   },
   header: {
@@ -53,27 +28,20 @@ const useStyles = createUseStyles((theme: Theme) => ({
     paddingBottom: 20
   },
   blurb: {
-    ...theme.typography.headerTertiary,
-    lineHeight: '2rem'
-    // textAlign: 'center'
+    alignSelf: 'flex-start',
+    ...theme.typography.body,
+    lineHeight: '30px',
+    textAlign: 'justify',
+    fontWeight: 'lighter',
+    paddingBottom: 20
   },
-  contactEmail: {
-    gridColumnStart: 'span 2',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textDecoration: 'none',
-    color: 'white',
-    borderRadius: 9,
-    fontFamily: 'Roboto',
-    fontSize: 18,
-    backgroundColor: theme.palette.secondary.light,
-    '&:hover': {
-      textDecoration: 'underline',
-      backgroundColor: theme.palette.secondary.main
-    }
+  findMeOn: {
+    width: '100%',
+    alignSelf: 'flex-end',
+    display: 'flex'
   },
   findMeOnIcon: {
+    padding: 8,
     color: theme.palette.secondary.light,
     '&:hover': {
       color: theme.palette.secondary.main
@@ -86,80 +54,73 @@ const useStyles = createUseStyles((theme: Theme) => ({
 }));
 
 export default function Profile() {
-  const theme = useTheme();
-  const classes: any = useStyles({ theme });
+  const classes: any = useStyles();
 
   return (
-    <main className={classes.gridWrapper}>
-      <section className={classes.contact}>
+    <Grid templateRows="2fr 1fr">
+      <GridItem columnSpan={7} className={classes.contact}>
         <h2 className={classes.header}>Hi I'm Sean. </h2>
+        <h2 className={classes.blurb}>Welcome to the my web development portfolio. </h2>
         <h2 className={classes.blurb}>
-          Welcome to the my web development portfolio. If you take one thing away from your visit,
-          it should be that I love to build things! If you would like to see more, you cant reach me
-          on one of the channels below:
+          If you take one thing away from your visit, it should be that I love to build things!
         </h2>
-      </section>
-
-      <div className={classes.picWrapper}>
+        <h2 className={classes.blurb}>
+          If you would like to see more, you can see my work or reach me on one of the channels
+          below.
+        </h2>
+        <div className={classes.findMeOn}>
+          <a
+            className={classes.findMeOnIcon}
+            href="https://github.com/Rennzie"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-3x fa-github-square" />
+          </a>
+          <a
+            className={classes.findMeOnIcon}
+            href="https://www.linkedin.com/in/sean-rennie6/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-3x fa-linkedin" />
+          </a>
+          <a
+            className={classes.findMeOnIcon}
+            href="https://stackoverflow.com/users/10132568/rennzie"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-3x fa-stack-overflow" />
+          </a>
+          <a
+            className={classes.findMeOnIcon}
+            href="https://medium.com/@rnnsea001"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-3x fa-medium" />
+          </a>
+          <a className={classes.findMeOnIcon} href="mailto:sean.rennie6@gmail.com">
+            <i className="fas fa-3x fa-envelope" />
+          </a>
+        </div>
+      </GridItem>
+      <GridItem className={classes.picWrapper} columnSpan={5}>
         <img className={classes.profilePic} src={profilePicture} alt="head shot of me" />
-      </div>
-
-      <div className={classes.findMeOn}>
-        <a
-          className={classes.findMeOnIcon}
-          href="https://github.com/Rennzie"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <i className="fab fa-3x fa-github-square" />
-        </a>
-        <a
-          className={classes.findMeOnIcon}
-          href="https://www.linkedin.com/in/sean-rennie6/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <i className="fab fa-3x fa-linkedin" />
-        </a>
-        <a
-          className={classes.findMeOnIcon}
-          href="https://stackoverflow.com/users/10132568/rennzie"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <i className="fab fa-3x fa-stack-overflow" />
-        </a>
-        <a
-          className={classes.findMeOnIcon}
-          href="https://medium.com/@rnnsea001"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <i className="fab fa-3x fa-medium" />
-        </a>
-      </div>
-      <a className={classes.contactEmail} href="mailto:sean.rennie6@gmail.com">
-        sean.rennie6@gmail.com
-      </a>
-      <section className={classes.bioWrapper}>
-        <p className={classes.paragraph}>
-          Working as an exploration geologist in West Africa for 5 years taught me to break big
-          problems into many little ones. It gave me communication skills (I learned French) and
-          taught me how to manage a team and deliver to stakeholders. While I miss the
-          problem-solving element of exploring, it never quite satisfied my love of building things.
-        </p>
+      </GridItem>
+      <GridItem columnSpan={12}>
         <p className={classes.paragraph}>
           I’ve always built things - from small lego projects to pump-houses on my parents’ farm.
           That’s why I retrained as a web-developer, first teaching myself online through Codecademy
-          and then taking General Assembly’s three month web-dev bootcamp.{' '}
+          and then taking General Assembly’s three month web development bootcamp.
         </p>
         <p className={classes.paragraph}>
-          Web-dev brought me to building my own agritech start-up with my wife in our spare bedroom.
-          It’s been great but we’re pausing our efforts and now I’m looking to join a world-class
-          product team. One where I can learn, grow and keep building top quality products that
-          people love.
+          I'm currently on the look out for a job in London, UK, where I'm keen to work for a
+          world-class team. One where I bring my broad experience contribute as much as possible
+          while learning as much as I can.
         </p>
-      </section>
-    </main>
+      </GridItem>
+    </Grid>
   );
 }
