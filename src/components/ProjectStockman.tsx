@@ -1,59 +1,33 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import { Theme } from '..';
 
-import { Tag, AchievementItem, Button } from './BuildComponents';
-// import stockmanScreenShots from '../assets/stockman-screen-shots-icon-style.png';
+import { Tag, AchievementItem, Button, Grid, GridItem, Tags } from './BuildComponents';
 import stockmanDemoGif from '../assets/the-stockman-demo.gif';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   head: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingBottom: 20
+    justifyContent: 'space-between'
   },
   header: {
     ...theme.typography.headerPrimary
   },
   aboutHeader: {
-    ...theme.typography.headerTertiary
+    ...theme.typography.headerTertiary,
+    paddingBottom: 0
   },
   blurb: {
     ...theme.typography.body,
     textAlign: 'justify'
   },
-  screenShots: {
-    height: 400,
-    width: 'auto'
-  },
   primaryImage: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center',
-    margin: '40px 0'
-  },
-  achievements: {
-    display: 'flex',
-    boxSizing: 'border-box',
-    justifyContent: 'space-between',
-    width: '100%'
+    justifyContent: 'center'
   },
   achieveList: {
-    width: '48%'
-  },
-
-  tech: {
-    padding: '16px 0',
-    boxSizing: 'border-box',
     width: '100%'
-  },
-  techTags: {
-    width: '100%',
-    display: 'flex',
-    flexWrap: 'wrap'
   }
 }));
 
@@ -65,50 +39,62 @@ export default function ProjectStockman({ goBack }: Props) {
   const theme = useTheme();
   const classes: any = useStyles({ theme });
   return (
-    <section className={classes.section}>
-      <div className={classes.head}>
+    <Grid>
+      {/*-----------------------
+          HEADER
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.head}>
         <h2 className={classes.header}>The Stockman</h2>
         <Button onClick={goBack}>BACK</Button>
-      </div>
-      <p className={classes.blurb}>
-        A herd management SaaS platform for livestock farmers to track animal numbers, rainfall &
-        movements.
-      </p>
+      </GridItem>
+      <GridItem columnSpan={12}>
+        <p className={classes.blurb}>
+          A herd management SaaS platform for livestock farmers to track animal numbers, rainfall &
+          movements.
+        </p>
+      </GridItem>
 
-      <div className={classes.primaryImage}>
+      {/*-----------------------
+          PROJECT GIF
+        ------------------------ */}
+      <GridItem columnSpan={12} className={classes.primaryImage}>
         <img className={classes.screenShots} src={stockmanDemoGif} alt="product screen shots" />
-      </div>
+      </GridItem>
 
-      <h6 className={classes.aboutHeader}>Achievements</h6>
-      <div className={classes.achievements}>
-        <div className={classes.achieveList}>
-          <AchievementItem>Only used React Hooks (no classes)</AchievementItem>
-          <AchievementItem>Redux, but migrating to Apollo local state</AchievementItem>
-          <AchievementItem>
-            Used Apollo's Graph Manager to integrate datagraph with VS Code for improved DX
-          </AchievementItem>
+      {/*-----------------------
+          ACHIEVEMENTS
+        ------------------------ */}
+      <GridItem columnSpan={12}>
+        <h6 className={classes.aboutHeader}>Achievements</h6>
+      </GridItem>
+      <GridItem columnSpan={6} className={classes.achieveList}>
+        <AchievementItem>Only used React Hooks (no classes)</AchievementItem>
+        <AchievementItem>Redux, but migrating to Apollo local state</AchievementItem>
+        <AchievementItem>
+          Used Apollo's Graph Manager to integrate datagraph with VS Code for improved DX
+        </AchievementItem>
 
-          <AchievementItem>Designed and built a serveless graphQL API</AchievementItem>
-          <AchievementItem>Designed and built a normalised PostgresSQL database</AchievementItem>
-          <AchievementItem>Full test coverage of the API with Jest</AchievementItem>
-        </div>
-        <div className={classes.achieveList}>
-          <AchievementItem>
-            Selected technologies that are both have a large community & longevity and exciting to
-            learn
-          </AchievementItem>
-          <AchievementItem>Set up a CI/CD deployment pipline to AWS with Gitlab</AchievementItem>
-          <AchievementItem>
-            Collaborated with UI/UX designers to build the front-end
-          </AchievementItem>
-          <AchievementItem>Integrated the Google maps drawing library</AchievementItem>
-          <AchievementItem>Migrated front-end to Typescript</AchievementItem>
-        </div>
-      </div>
+        <AchievementItem>Designed and built a serveless graphQL API</AchievementItem>
+        <AchievementItem>Designed and built a normalised PostgresSQL database</AchievementItem>
+        <AchievementItem>Full test coverage of the API with Jest</AchievementItem>
+      </GridItem>
+      <GridItem columnSpan={6} className={classes.achieveList}>
+        <AchievementItem>
+          Selected technologies that are both have a large community & longevity and exciting to
+          learn
+        </AchievementItem>
+        <AchievementItem>Set up a CI/CD deployment pipline to AWS with Gitlab</AchievementItem>
+        <AchievementItem>Collaborated with UI/UX designers to build the front-end</AchievementItem>
+        <AchievementItem>Integrated the Google maps drawing library</AchievementItem>
+        <AchievementItem>Migrated front-end to Typescript</AchievementItem>
+      </GridItem>
 
-      <div className={classes.tech}>
+      {/*-----------------------
+          TECHNOLOGIES
+        ------------------------ */}
+      <GridItem columnSpan={12}>
         <h6 className={classes.aboutHeader}>Technologies</h6>
-        <div className={classes.techTags}>
+        <Tags>
           <Tag>react </Tag>
           <Tag>typescript </Tag>
           <Tag>apollo client</Tag>
@@ -128,9 +114,13 @@ export default function ProjectStockman({ goBack }: Props) {
           <Tag>graphql</Tag>
           <Tag>node</Tag>
           <Tag>aws lambda</Tag>
-        </div>
-      </div>
-      <div className={classes.tech}>
+        </Tags>
+      </GridItem>
+
+      {/*-----------------------
+          LAST BITS
+        ------------------------ */}
+      <GridItem columnSpan={12}>
         <h6 className={classes.aboutHeader}>What Else...</h6>
         <p className={classes.blurb}>
           Please email me if you would like to see the code. It's hosted in a private repo as it's
@@ -147,7 +137,7 @@ export default function ProjectStockman({ goBack }: Props) {
           </span>
           .
         </p>
-      </div>
-    </section>
+      </GridItem>
+    </Grid>
   );
 }

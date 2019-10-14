@@ -8,10 +8,12 @@ const useStyles = createUseStyles({
     width: '100%',
     boxSizing: 'border-box',
     display: 'grid',
+    overflow: 'auto',
     gridTemplateColumns: templateColumns || `repeat(${columns}, 1fr)`,
     gridTemplateRows: templateRows,
     gridGap: gutter,
-    padding: margin || gutter * 2
+    paddingTop: 56,
+    padding: `0px ${margin || gutter * 2}px`
   })
 });
 

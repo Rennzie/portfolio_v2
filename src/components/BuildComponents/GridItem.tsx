@@ -27,6 +27,7 @@ type GridItemProps = {
 };
 
 export default function GridItem(props: GridItemProps) {
+  console.log(props);
   const { children, className } = props;
   const { gridItem } = useStyles(props);
 

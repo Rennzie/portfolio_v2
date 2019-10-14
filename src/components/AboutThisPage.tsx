@@ -13,7 +13,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     ...theme.typography.body
   }
 }));
-
+// TODO: add links to the repos where mentioned
 export default function AboutThisPage() {
   //@ts-ignore
   const theme: Theme = useTheme();
