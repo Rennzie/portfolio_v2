@@ -48,7 +48,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export default function Projects() {
   const classes: any = useStyles();
-  const [project, setProject] = useState<'stockman' | 'prototype' | 'assembly' | null>('prototype');
+  const [project, setProject] = useState<'stockman' | 'prototype' | 'assembly' | null>('assembly');
 
   return (
     <>
