@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.55e2ded8.chunk.js",
+    "main.js.map": "/static/js/main.55e2ded8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a534bbb8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a534bbb8.js.map",
+    "static/js/2.fdbf0154.chunk.js": "/static/js/2.fdbf0154.chunk.js",
+    "static/js/2.fdbf0154.chunk.js.map": "/static/js/2.fdbf0154.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a6eb68a69d766148697228b2ef501f42.js": "/precache-manifest.a6eb68a69d766148697228b2ef501f42.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/TS-App-icon2.png": "/static/media/TS-App-icon2.c35561f5.png",
+    "static/media/battle-command-board-cropped-1200x1200.png": "/static/media/battle-command-board-cropped-1200x1200.ef231a4b.png",
+    "static/media/general-assembly-logo.png": "/static/media/general-assembly-logo.ba323a1e.png",
+    "static/media/grit-dashboard-cropped-1200x1200.png": "/static/media/grit-dashboard-cropped-1200x1200.bada2e7a.png",
+    "static/media/livestock-manage-prototype-screens.png": "/static/media/livestock-manage-prototype-screens.e7c1c3de.png",
+    "static/media/nice-rocks-show-page-cropped-1200x1200.png": "/static/media/nice-rocks-show-page-cropped-1200x1200.a3a9d80e.png",
+    "static/media/profile-picture-sean-small-sqr.jpg": "/static/media/profile-picture-sean-small-sqr.ab543133.jpg",
+    "static/media/resolute-cropped-1200x1200.png": "/static/media/resolute-cropped-1200x1200.289e8570.png",
+    "static/media/sr-logo-bricks-tagline.svg": "/static/media/sr-logo-bricks-tagline.5128acd6.svg",
+    "static/media/the-stockman-demo.gif": "/static/media/the-stockman-demo.02634974.gif"
+  }
+}
