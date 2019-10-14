@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import { Theme } from '..';
 
 import stockmanLogo from '../assets/TS-App-icon2.png';
@@ -9,6 +9,7 @@ import generalAssemblyLogo from '../assets/general-assembly-logo.png';
 import ProjectStockman from './ProjectStockman';
 import ProjectStockmanProto from './ProjectStockmanProto';
 import ProjectsGeneralAssembly from './ProjectsGeneralAssembly';
+import { Grid, GridItem } from './BuildComponents';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   header: {
@@ -46,20 +47,20 @@ const useStyles = createUseStyles((theme: Theme) => ({
 }));
 
 export default function Projects() {
-  //@ts-ignore
-  const theme: Theme = useTheme();
-  const classes: any = useStyles({ theme });
+  const classes: any = useStyles();
   const [project, setProject] = useState<'stockman' | 'prototype' | 'assembly' | null>(null);
 
   return (
     <>
       {!project && (
-        <>
+        <Grid templateRows="1fr 8fr">
           {/* -----------------
             PROJECT LIST
             ----------------- */}
-          <h2 className={classes.header}>Projects</h2>
-          <section className={classes.projectList}>
+          <GridItem columnSpan={4}>
+            <h2 className={classes.header}>Projects</h2>
+          </GridItem>
+          <GridItem columnSpan={12} className={classes.projectList}>
             {/* -----------------
             THE STOCKMAN
             ----------------- */}
@@ -109,8 +110,8 @@ export default function Projects() {
                 over a three month period.
               </p>
             </div>
-          </section>
-        </>
+          </GridItem>
+        </Grid>
       )}
       {project === 'stockman' && <ProjectStockman goBack={() => setProject(null)} />}
       {project === 'prototype' && <ProjectStockmanProto goBack={() => setProject(null)} />}
