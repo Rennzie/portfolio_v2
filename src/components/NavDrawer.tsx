@@ -43,7 +43,7 @@ type Props = {
 
 export default function NavDrawer({ location, handleNextLocation }: Props) {
   const theme = useTheme();
-  const classes: any = useStyles({ theme });
+  const classes: any = useStyles();
 
   //@ts-ignore
   const selected = theme.palette.secondary.light;
@@ -57,28 +57,28 @@ export default function NavDrawer({ location, handleNextLocation }: Props) {
           className={classes.navCard}
           style={{ backgroundColor: location === 'profile' ? selected : '' }}
         >
-          Profile
+          Me
         </div>
         <div
           onClick={handleNextLocation('PROJECTS')}
           className={classes.navCard}
           style={{ backgroundColor: location === 'projects' ? selected : '' }}
         >
-          Projects
+          My Work
         </div>
         <div
           onClick={handleNextLocation('SKILLS')}
           className={classes.navCard}
           style={{ backgroundColor: location === 'skills' ? selected : '' }}
         >
-          Skills
+          My Skills
         </div>
         <div
           onClick={handleNextLocation('ABOUT')}
           className={classes.navCard}
           style={{ backgroundColor: location === 'about' ? selected : '' }}
         >
-          About
+          About the page
         </div>
       </section>
     </div>
