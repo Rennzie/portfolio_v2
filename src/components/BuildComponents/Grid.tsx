@@ -3,15 +3,15 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  grid: ({ columns, templateRows, gutter, margin }: GridProps) => ({
+  grid: ({ columns = 12, templateColumns, templateRows, gutter = 24, margin }: GridProps) => ({
     height: '100%',
     width: '100%',
     boxSizing: 'border-box',
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns || 12}, 1fr)`,
+    gridTemplateColumns: templateColumns || `repeat(${columns}, 1fr)`,
     gridTemplateRows: templateRows,
-    gridGap: gutter || 24,
-    padding: margin || (gutter || 24) * 2
+    gridGap: gutter,
+    padding: margin || gutter * 2
   })
 });
 
@@ -20,6 +20,8 @@ type GridProps = {
   className?: string;
   /** Number of colums in the grid. Defaults to 12 */
   columns?: number;
+  /** Set the grids column template */
+  templateColumns?: string;
   templateRows?: string;
   /** Width of the column and row gutters. Defaults to 24px */
   gutter?: number;
